@@ -257,7 +257,7 @@ const config = {
 		// if ( blah )  return foo
 		// Instead of:
 		// if ( blah ) return foo
-		// @TODO would be great to enforce the above
+		// However, eslint does not support this, so ignore.
 		'no-multi-spaces': IGNORE,
 
 		// Use ES6 template strings instead
@@ -414,7 +414,7 @@ const config = {
 		// Force handling of callback errors
 		'handle-callback-err': ERROR,
 
-		// @TODO decide if this is good or not
+		// Seems like a good idea
 		'no-mixed-requires': ERROR,
 
 		// Disallow error prone syntax
@@ -663,7 +663,7 @@ const config = {
 		'operator-assignment': [ERROR, 'always'],
 
 		// Should be before, but not with =, *=, /=, += lines
-		// @TODO figure out how to enforce
+		// However, eslint isn't that specific, so ignore
 		'operator-linebreak': IGNORE,
 
 		// This rule doesn't appear to work correclty

@@ -14,8 +14,7 @@ class MissingError extends Error {
 
 const IGNORE = 0,
 	WARN = 1,
-	ERROR = 2,
-	MAX_PARAMS = 4
+	ERROR = 2
 
 const config = {
 	extends: [],
@@ -194,10 +193,12 @@ if (
 }
 if (prettier) {
 	// Ensure dependencies exist
-	if (devDeps.includes('eslint-plugin-prettier') === false)
+	if (devDeps.includes('eslint-plugin-prettier') === false) {
 		throw new MissingError('eslint-plugin-prettier')
-	if (devDeps.includes('eslint-config-prettier') === false)
+	}
+	if (devDeps.includes('eslint-config-prettier') === false) {
 		throw new MissingError('eslint-config-prettier')
+	}
 	if (devDeps.includes('prettier') === false) throw new MissingError('prettier')
 
 	// Add the plugin

@@ -1,13 +1,25 @@
 {
   "name": "eslint-config-bevry",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Bevry's ESLint configuration is an adaptive configuration that automatically configures ESLint.",
   "homepage": "https://github.com/bevry/eslint-config-bevry",
   "license": "MIT",
   "keywords": [
     "eslint",
     "bevry",
-    "eslint-config"
+    "eslint-config",
+    "eslintconfig",
+    "prettier",
+    "typescript",
+    "flow",
+    "flow-type",
+    "flowtype",
+    "babel",
+    "editions",
+    "react",
+    "jsx",
+    "tsx",
+    "lint"
   ],
   "badges": {
     "list": [
@@ -43,6 +55,11 @@
   "maintainers": [
     "Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
   ],
+  "contributors": [
+    "Benjamin Lupton <b@lupton.cc> (http://balupton.com)",
+    "Michael Duane Mooring (http://mdm.cc)",
+    "Rob Loach <robloach@gmail.com> (http://robloach.net)"
+  ],
   "bugs": {
     "url": "https://github.com/bevry/eslint-config-bevry/issues"
   },
@@ -51,9 +68,19 @@
     "url": "https://github.com/bevry/eslint-config-bevry.git"
   },
   "engines": {
-    "node": ">=6"
+    "node": "6 || 8 || 10 || 11"
   },
-  "main": "index.js",
+  "main": "index",
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "joe": "^2.0.2",
+    "joe-reporter-console": "^2.0.2",
+    "prettier": "^1.15.2",
+    "projectz": "^1.5.3",
+    "valid-directory": "^1.0.0"
+  },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out",
     "our:compile": "echo no need for this project",
@@ -71,34 +98,16 @@
     "our:test": "npm run our:verify && npm test",
     "our:verify": "npm run our:verify:directory && npm run our:verify:eslint",
     "our:verify:directory": "npx valid-directory",
-    "our:verify:eslint": "eslint --fix './*.js'",
-    "test": "node --harmony ./test.js --joe-reporter=console"
-  },
-  "dependencies": {},
-  "devDependencies": {
-    "eslint": "^5.9.0",
-    "eslint-config-prettier": "^3.3.0",
-    "eslint-plugin-prettier": "^3.0.0",
-    "joe": "^2.0.2",
-    "joe-reporter-console": "^2.0.2",
-    "prettier": "^1.15.2",
-    "projectz": "^1.5.3",
-    "valid-directory": "^1.0.0"
+    "our:verify:eslint": "eslint --fix --ignore-pattern '**/*.d.ts' '**/*.js'",
+    "test": "node --harmony ./test --joe-reporter=console"
   },
   "eslintConfig": {
     "extends": [
-      "eslint:recommended",
-      "./rules.js",
-      "./adapt.js"
+      "./local.js"
     ]
   },
   "prettier": {
     "semi": false,
     "singleQuote": true
-  },
-  "contributors": [
-    "Benjamin Lupton <b@lupton.cc> (http://balupton.com)",
-    "Michael Duane Mooring (http://mdm.cc)",
-    "Rob Loach (http://robloach.net)"
-  ]
+  }
 }

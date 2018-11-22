@@ -1,5 +1,13 @@
-// 2016 December 29
-// https://github.com/bevry/editions
 'use strict'
 
-module.exports = require('editions').requirePackage(__dirname, require, 'test.js')
+const joe = require('joe')
+
+joe.suite(function(suite, test) {
+	const files = ['index', 'rules', 'adapt']
+	files.forEach(function(file) {
+		const path = `./${file}.js`
+		test(path, function() {
+			require(path)
+		})
+	})
+})

@@ -1,249 +1,149 @@
-# Bevry's Project Base Files
-Files we use when scaffolding new projects.
+<!-- TITLE/ -->
 
-Use [`boundation`](https://github.com/bevry/boundation) for automatic application.
+<h1>eslint-config-bevry</h1>
 
-
-## Setup
-
-### init
-
-Setup your new project:
-
-``` shell
-npm init
-touch README.md
-```
+<!-- /TITLE -->
 
 
-### files
+<!-- BADGES/ -->
 
-Download the relevant files for your project:
+<span class="badge-travisci"><a href="http://travis-ci.org/bevry/eslint-config-bevry" title="Check this project's build status on TravisCI"><img src="https://img.shields.io/travis/bevry/eslint-config-bevry/master.svg" alt="Travis CI Build Status" /></a></span>
+<span class="badge-npmversion"><a href="https://npmjs.org/package/eslint-config-bevry" title="View this project on NPM"><img src="https://img.shields.io/npm/v/eslint-config-bevry.svg" alt="NPM version" /></a></span>
+<span class="badge-npmdownloads"><a href="https://npmjs.org/package/eslint-config-bevry" title="View this project on NPM"><img src="https://img.shields.io/npm/dm/eslint-config-bevry.svg" alt="NPM downloads" /></a></span>
+<span class="badge-daviddm"><a href="https://david-dm.org/bevry/eslint-config-bevry" title="View the status of this project's dependencies on DavidDM"><img src="https://img.shields.io/david/bevry/eslint-config-bevry.svg" alt="Dependency Status" /></a></span>
+<span class="badge-daviddmdev"><a href="https://david-dm.org/bevry/eslint-config-bevry#info=devDependencies" title="View the status of this project's development dependencies on DavidDM"><img src="https://img.shields.io/david/dev/bevry/eslint-config-bevry.svg" alt="Dev Dependency Status" /></a></span>
+<br class="badge-separator" />
+<span class="badge-patreon"><a href="https://patreon.com/bevry" title="Donate to this project using Patreon"><img src="https://img.shields.io/badge/patreon-donate-yellow.svg" alt="Patreon donate button" /></a></span>
+<span class="badge-flattr"><a href="https://flattr.com/profile/balupton" title="Donate to this project using Flattr"><img src="https://img.shields.io/badge/flattr-donate-yellow.svg" alt="Flattr donate button" /></a></span>
+<span class="badge-liberapay"><a href="https://liberapay.com/bevry" title="Donate to this project using Liberapay"><img src="https://img.shields.io/badge/liberapay-donate-yellow.svg" alt="Liberapay donate button" /></a></span>
+<span class="badge-thanksapp"><a href="https://givethanks.app/donate/npm/eslint-config-bevry" title="Donate to this project using Thanks App"><img src="https://img.shields.io/badge/thanksapp-donate-yellow.svg" alt="Thanks App donate button" /></a></span>
+<span class="badge-boostlab"><a href="https://boost-lab.app/bevry/eslint-config-bevry" title="Donate to this project using Boost Lab"><img src="https://img.shields.io/badge/boostlab-donate-yellow.svg" alt="Boost Lab donate button" /></a></span>
+<span class="badge-buymeacoffee"><a href="https://buymeacoffee.com/balupton" title="Donate to this project using Buy Me A Coffee"><img src="https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg" alt="Buy Me A Coffee donate button" /></a></span>
+<span class="badge-opencollective"><a href="https://opencollective.com/bevry" title="Donate to this project using Open Collective"><img src="https://img.shields.io/badge/open%20collective-donate-yellow.svg" alt="Open Collective donate button" /></a></span>
+<span class="badge-crypto"><a href="https://bevry.me/crypto" title="Donate to this project using Cryptocurrency"><img src="https://img.shields.io/badge/crypto-donate-yellow.svg" alt="crypto donate button" /></a></span>
+<span class="badge-paypal"><a href="https://bevry.me/paypal" title="Donate to this project using Paypal"><img src="https://img.shields.io/badge/paypal-donate-yellow.svg" alt="PayPal donate button" /></a></span>
+<span class="badge-wishlist"><a href="https://bevry.me/wishlist" title="Buy an item on our wishlist for us"><img src="https://img.shields.io/badge/wishlist-donate-yellow.svg" alt="Wishlist browse button" /></a></span>
 
-> - If you have wget, replace `down` with `wget -N`
-> - If you have curl, replace `down` with `curl -OL`
-
-``` shell
-down https://raw.githubusercontent.com/bevry/base/master/.editorconfig
-down https://raw.githubusercontent.com/bevry/base/master/.eslintrc.js
-down https://raw.githubusercontent.com/bevry/base/master/.gitignore
-down https://raw.githubusercontent.com/bevry/base/master/LICENSE.md
-
-down https://raw.githubusercontent.com/bevry/base/master/.npmignore
-
-down https://raw.githubusercontent.com/bevry/base/master/CONTRIBUTING.md
-
-down https://raw.githubusercontent.com/bevry/base/master/index.js
-down https://raw.githubusercontent.com/bevry/base/master/test.js
-
-down https://raw.githubusercontent.com/bevry/base/master/.flowconfig
-
-down https://raw.githubusercontent.com/bevry/base/master/.travis.yml
-
-down https://raw.githubusercontent.com/bevry/base/master/package.json
-down https://raw.githubusercontent.com/bevry/base/master/HISTORY.md
-```
-
-And add them to git:
-
-``` shell
-git add .editorconfig .eslintrc.js .gitignore .flowconfig .npmignore .travis.yml
-git add .
-mkdir source
-touch source/index.js
-touch source/test.js
-touch source/bin.js
-```
+<!-- /BADGES -->
 
 
-### readme
+<!-- DESCRIPTION/ -->
 
-Use the following inside your `README.md` file to have [projectz](https://github.com/bevry/projectz) generate most of it for you, leaving you up the "Usage" section.
+Bevry's ESLint configuration package.
 
-``` markdown
-<!-- TITLE -->
+<!-- /DESCRIPTION -->
 
-<!-- BADGES -->
-
-<!-- DESCRIPTION -->
-
-<!-- INSTALL -->
 
 ## Usage
 
-<!-- HISTORY -->
+The Bevry ESLint configuration is an adaptive configuration that automatically configures ESLint based on the following:
 
-<!-- CONTRIBUTE -->
+-   If you are using [Editions](https://github.com/bevry/editions), then make use of the information it provides
+-   If you are using Modules (import/export), then configure ESLint for it
+-   If you are using a ES5 or below, then configure ESLint for it
+    -   Disables incompatible rules that require ES6+
+-   If you are using JSX, then configure ESLint for it
+-   If you are using React, then configure ESLint for it
+    -   Enables the plugin `eslint-plugin-react` and configures it with its recommended rules
+-   If you are using TypeScript, then configure ESLint for it
+    -   Enables the plugin `eslint-plugin-typescript`
+    -   Configures the parser as `typescript-eslint-parser`
+    -   Disables incompatible rules that require JavaScript
+-   If you are using `eslint-plugin-babel`, then configure ESLint for it
+    -   Enables the plugin, and automatically configures the rule replacements
+-   If you are using `babel-eslint`, then configure ESLint for it
+-   If you are using Prettier, the configure ESLint for it
+    -   Enables the configuration `eslint-config-prettier`
+    -   Enables the plugin `eslint-plugin-prettier` and configures it with its recommended rules
+    -   Enables the other prettier configurations automatically based on feature/language usage
 
-<!-- BACKERS -->
+To make use of it, you must first install it as a development dependency:
 
-<!-- LICENSE -->
+```bash
+npm install --save-dev eslint-config-bevry
 ```
 
+Then for full automatic usage, the only ESLint configuration you will need is to add the following to your `package.json` file:
 
-### dependencies
-
-Add the appropriate development dependencies for what you want to do:
-
-> - If you have yarn, replace `nid` with `yarn add --dev` and `ni` with `yarn add`
-> - If you have npm, replace `nid` with `npm install --save-dev` and `ni` with `npm install --save`
-
-``` shell
-# Meta Compilation
-nid projectz
-
-# Linting
-nid eslint
-
-# Babel Compilation
-nid babel-cli babel-preset-es2015
-
-# Edition Autoloading
-ni editions
-
-# Testing
-nid assert-helpers joe joe-reporter-console
-
-# Documentation
-nid documentation
-
-# Flow Type
-nid flow-bin
-
-# Babel Experimental Feature Linting
-nid eslint-plugin-babel
-
-# React Linting
-nid eslint-plugin-react
-```
-
-
-### package.json
-
-Copy over the relevant parts from our [`package.json` template](https://github.com/bevry/base/blob/master/package.json).
-
-
-### travis
-
-Full set of available customisations and their documentations is available over at [balupton/awesome-travis](https://github.com/balupton/awesome-travis/).
-
-
-### configuration
-
-``` shell
-# https://github.com/balupton/awesome-travis/blob/master/README.md#release-to-npm
-npm owner add $NPM_USERNAME
-travis env set NPM_USERNAME "$NPM_USERNAME" --public --no-interactive
-travis env set NPM_PASSWORD "$NPM_PASSWORD" --no-interactive
-travis env set NPM_EMAIL "$NPM_EMAIL" --no-interactive
-
-# https://github.com/balupton/awesome-travis#release-to-surge
-travis env set SURGE_LOGIN "$SURGE_LOGIN" --public --no-interactive
-travis env set SURGE_TOKEN "$SURGE_TOKEN" --no-interactive
-
-# github client details for rate limits
-travis env set GITHUB_CLIENT_ID "$GITHUB_CLIENT_ID" --no-interactive
-travis env set GITHUB_CLIENT_SECRET "$GITHUB_CLIENT_SECRET" --no-interactive
-  
-# https://github.com/balupton/awesome-travis/blob/master/README.md#slack
-# https://github.com/balupton/awesome-travis/blob/master/README.md#email
-travis encrypt "$SLACK_SUBDOMAIN:$SLACK_TRAVIS_TOKEN#updates" --add notifications.slack --no-interactive
-travis encrypt "$TRAVIS_NOTIFICATION_EMAIL" --add notifications.email.recipients --no-interactive
-```
-
-
-## Legacy
-
-### Scripts
-
-CoffeeScript scripts:
-
-``` json
+```json
 {
-  "scripts": {
-    "our:verify:coffeelint": "coffeelint ./source",
-    "our:compile:coffeescript": "coffee -bco ./es5 ./source",
-    "our:meta:yuidoc": "yuidoc -o ./docs --syntaxtype coffee -e .coffee ./source",
-    "our:meta:biscotto": "biscotto -n $npm_package_title --title \"$npm_package_title API Documentation\" -r README.md -o ./docs ./source - ./LICENSE.md ./HISTORY.md"
-  }
+    "eslintConfig": {
+        "extends": ["bevry"]
+    }
 }
 ```
 
-### [ESNextGuardian](https://github.com/bevry/esnextguardian)
-[Our `esnextguardian.js` file.](https://github.com/bevry/base/blob/34fc820c8d87f1f21706ce7e26882b6cd5437368/esnextguardian.js)
+If you would like more control, rather than extending `bevry` directly, you can extend the individual parts instead:
 
-``` shell
-down https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/esnextguardian.js
-```
+-   `bevry/rules` contains the rules for our coding standard, you can use or not use this to your liking
+-   `bevry/adapt` contains the adaptive configuration, this should be the last extension you apply
 
-Dropped in favour of [Editions](https://github.com/bevry/editions).
+<!-- HISTORY/ -->
 
+<h2>History</h2>
 
-### [Nakefile](https://github.com/bevry/base/wiki/Nakefile)
-[Our `nakefile.js` file.](https://github.com/bevry/base/blob/34fc820c8d87f1f21706ce7e26882b6cd5437368/nakefile.js)
+<a href="https://github.com/bevry/eslint-config-bevry/blob/master/HISTORY.md#files">Discover the release history by heading on over to the <code>HISTORY.md</code> file.</a>
 
-``` shell
-down https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/nakefile.js
-```
-
-Dropped in favour of NPM Scripts.
+<!-- /HISTORY -->
 
 
-### [Cakefile](http://coffeescript.org/#cake)
-[Our `Cakefile` file.](https://raw.githubusercontent.com/bevry/base/22bbd5999c420c4058fd54becb9b1cd3cd1d70dd/Cakefile)
+<!-- CONTRIBUTE/ -->
 
-``` shell
-down https://raw.githubusercontent.com/bevry/base/22bbd5999c420c4058fd54becb9b1cd3cd1d70dd/Cakefile
-```
+<h2>Contribute</h2>
 
-Dropped in favour of NPM Scripts.
+<a href="https://github.com/bevry/eslint-config-bevry/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
 
-
-### [CoffeeLint](http://www.coffeelint.org)
-[Our `coffeelint.json` file.](https://github.com/bevry/base/blob/34fc820c8d87f1f21706ce7e26882b6cd5437368/coffeelint.json)
-
-``` shell
-down https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/coffeelint.json
-```
-
-Dropped in favour of ESNext.
+<!-- /CONTRIBUTE -->
 
 
-### [Cyclic](https://github.com/bevry/base/wiki/Cyclic)
-[Our `cyclic.js` file.](https://github.com/bevry/base/blob/34fc820c8d87f1f21706ce7e26882b6cd5437368/cyclic.js)
+<!-- BACKERS/ -->
 
-``` shell
-down https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/cyclic.js
-```
+<h2>Backers</h2>
 
-Dropped in favour of npm `>=2`.
+<h3>Maintainers</h3>
+
+These amazing people are maintaining this project:
+
+<ul><li><a href="http://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/eslint-config-bevry/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/eslint-config-bevry">view contributions</a></li></ul>
+
+<h3>Sponsors</h3>
+
+No sponsors yet! Will you be the first?
+
+<span class="badge-patreon"><a href="https://patreon.com/bevry" title="Donate to this project using Patreon"><img src="https://img.shields.io/badge/patreon-donate-yellow.svg" alt="Patreon donate button" /></a></span>
+<span class="badge-flattr"><a href="https://flattr.com/profile/balupton" title="Donate to this project using Flattr"><img src="https://img.shields.io/badge/flattr-donate-yellow.svg" alt="Flattr donate button" /></a></span>
+<span class="badge-liberapay"><a href="https://liberapay.com/bevry" title="Donate to this project using Liberapay"><img src="https://img.shields.io/badge/liberapay-donate-yellow.svg" alt="Liberapay donate button" /></a></span>
+<span class="badge-thanksapp"><a href="https://givethanks.app/donate/npm/eslint-config-bevry" title="Donate to this project using Thanks App"><img src="https://img.shields.io/badge/thanksapp-donate-yellow.svg" alt="Thanks App donate button" /></a></span>
+<span class="badge-boostlab"><a href="https://boost-lab.app/bevry/eslint-config-bevry" title="Donate to this project using Boost Lab"><img src="https://img.shields.io/badge/boostlab-donate-yellow.svg" alt="Boost Lab donate button" /></a></span>
+<span class="badge-buymeacoffee"><a href="https://buymeacoffee.com/balupton" title="Donate to this project using Buy Me A Coffee"><img src="https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg" alt="Buy Me A Coffee donate button" /></a></span>
+<span class="badge-opencollective"><a href="https://opencollective.com/bevry" title="Donate to this project using Open Collective"><img src="https://img.shields.io/badge/open%20collective-donate-yellow.svg" alt="Open Collective donate button" /></a></span>
+<span class="badge-crypto"><a href="https://bevry.me/crypto" title="Donate to this project using Cryptocurrency"><img src="https://img.shields.io/badge/crypto-donate-yellow.svg" alt="crypto donate button" /></a></span>
+<span class="badge-paypal"><a href="https://bevry.me/paypal" title="Donate to this project using Paypal"><img src="https://img.shields.io/badge/paypal-donate-yellow.svg" alt="PayPal donate button" /></a></span>
+<span class="badge-wishlist"><a href="https://bevry.me/wishlist" title="Buy an item on our wishlist for us"><img src="https://img.shields.io/badge/wishlist-donate-yellow.svg" alt="Wishlist browse button" /></a></span>
+
+<h3>Contributors</h3>
+
+These amazing people have contributed code to this project:
+
+<ul><li><a href="http://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/eslint-config-bevry/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/eslint-config-bevry">view contributions</a></li>
+<li><a href="http://mdm.cc">Michael Duane Mooring</a> — <a href="https://github.com/bevry/eslint-config-bevry/commits?author=mikeumus" title="View the GitHub contributions of Michael Duane Mooring on repository bevry/eslint-config-bevry">view contributions</a></li>
+<li><a href="http://robloach.net">Rob Loach</a> — <a href="https://github.com/bevry/eslint-config-bevry/commits?author=RobLoach" title="View the GitHub contributions of Rob Loach on repository bevry/eslint-config-bevry">view contributions</a></li></ul>
+
+<a href="https://github.com/bevry/eslint-config-bevry/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
+
+<!-- /BACKERS -->
 
 
-### [JSHint](http://jshint.com)
-[Our `.jshintrc` file.](https://github.com/bevry/base/blob/b1335ea16811d2870dbde87c3a1a606797db54a0/.jshintrc)
+<!-- LICENSE/ -->
 
-``` shell
-down https://raw.githubusercontent.com/bevry/base/b1335ea16811d2870dbde87c3a1a606797db54a0/.jshintrc
-```
+<h2>License</h2>
 
-Dropped in favour of [ESLint](http://eslint.org).
+Unless stated otherwise all works are:
 
+<ul><li>Copyright &copy; 2018+ <a href="http://balupton.com">Benjamin Lupton</a></li></ul>
 
-### [JSCS](http://jscs.info)
-[Our `.jscrc` file.](https://github.com/bevry/base/blob/34fc820c8d87f1f21706ce7e26882b6cd5437368/.jscrc)
+and licensed under:
 
-``` shell
-down https://raw.githubusercontent.com/bevry/base/34fc820c8d87f1f21706ce7e26882b6cd5437368/.jscrc
-```
+<ul><li><a href="http://spdx.org/licenses/MIT.html">MIT License</a></li></ul>
 
-Dropped in favour of [ESLint](http://eslint.org).
-
-
-## History
-
-[View the commit history for the release history.](https://github.com/bevry/base/commits/master)
-
-
-## License
-Licensed under the [Creative Commons Zero](http://creativecommons.org/publicdomain/zero/1.0/) making it [public domain](https://en.wikipedia.org/wiki/Public_domain) so you can do whatever you wish with it without worry (you can even remove this notice!)
-<br/>Copyright &copy; 2011+ [Benjamin Lupton](http://balupton.com)
+<!-- /LICENSE -->

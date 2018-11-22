@@ -1,4 +1,6 @@
 # History
 
-## v1.0.0 2015 October 25
-- Some feature
+## v1.0.0 2018 November 22
+
+-   Abstracted out from [bevry/base](https://github.com/bevry/base)
+-   Added prettier integration

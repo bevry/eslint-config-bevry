@@ -1,14 +1,13 @@
 {
-  "title": "projectName",
-  "name": "projectName",
+  "name": "eslint-config-bevry",
   "version": "1.0.0",
-  "description": "description",
-  "homepage": "https://github.com/bevry/projectName",
+  "description": "Bevry's ESLint configuration package.",
+  "homepage": "https://github.com/bevry/eslint-config-bevry",
   "license": "MIT",
   "keywords": [
-    "a",
-    "b",
-    "c"
+    "eslint",
+    "bevry",
+    "eslint-config"
   ],
   "badges": {
     "list": [
@@ -19,90 +18,87 @@
       "daviddmdev",
       "---",
       "patreon",
-      "opencollective",
-      "gratipay",
       "flattr",
+      "liberapay",
+      "thanksapp",
+      "boostlab",
+      "buymeacoffee",
+      "opencollective",
+      "crypto",
       "paypal",
-      "bitcoin",
-      "wishlist",
-      "---",
-      "slackin"
+      "wishlist"
     ],
     "config": {
-      "patreonUsername": "bevry",
-      "opencollectiveUsername": "bevry",
-      "gratipayUsername": "bevry",
+      "buymeacoffeeUsername": "balupton",
+      "cryptoURL": "https://bevry.me/crypto",
       "flattrUsername": "balupton",
+      "liberapayUsername": "bevry",
+      "opencollectiveUsername": "bevry",
+      "patreonUsername": "bevry",
       "paypalURL": "https://bevry.me/paypal",
-      "bitcoinURL": "https://bevry.me/bitcoin",
-      "wishlistURL": "https://bevry.me/wishlist",
-      "slackinURL": "https://slack.bevry.me"
+      "wishlistURL": "https://bevry.me/wishlist"
     }
   },
-  "author": "2016+ Bevry Pty Ltd <us@bevry.me> (http://bevry.me)",
+  "author": "2018+ Benjamin Lupton <b@lupton.cc> (http://balupton.com)",
   "maintainers": [
-    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
-  ],
-  "contributors": [
-    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
+    "Benjamin Lupton <b@lupton.cc> (http://balupton.com)"
   ],
   "bugs": {
-    "url": "https://github.com/bevry/projectName/issues"
+    "url": "https://github.com/bevry/eslint-config-bevry/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bevry/projectName.git"
+    "url": "https://github.com/bevry/eslint-config-bevry.git"
   },
   "engines": {
-    "node": ">=0.12"
+    "node": ">=6"
   },
-  "editions": [
-    {
-      "description": "Source + ESNext + Require",
-      "directory": "source",
-      "entry": "index.js",
-      "syntaxes": [
-        "javascript",
-        "esnext",
-        "require",
-        "const",
-        "let"
-      ]
-    },
-    {
-      "description": "Babel Compiled + ES2015 + Require",
-      "directory": "es2015",
-      "entry": "index.js",
-      "syntaxes": [
-        "javascript",
-        "es2015",
-        "require"
-      ]
-    }
-  ],
   "main": "index.js",
-  "browser": "es2015/index.js",
   "scripts": {
-    "our:setup": "npm install",
-    "our:clean": "rm -Rf ./docs ./es2015 ./out",
-    "our:compile": "npm run our:compile:es2015",
-    "our:compile:es2015": "babel ./source --out-dir ./es2015 --presets es2015",
-    "our:meta": "npm run our:meta:docs && npm run our:meta:projectz",
-    "our:meta:docs": "documentation build -f html -o ./docs -g --shallow ./source/**.js",
+    "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out",
+    "our:compile": "echo no need for this project",
+    "our:deploy": "echo no need for this project",
+    "our:meta": "npm run our:meta:projectz",
     "our:meta:projectz": "projectz compile",
-    "our:verify": "npm run our:verify:eslint && npm run our:verify:flow",
-    "our:verify:eslint": "eslint --fix ./source",
-    "our:verify:flow": "flow check",
-    "our:test": "npm run our:verify && npm test",
-    "our:release": "npm run our:release:prepare && npm run our:release:check && npm run our:release:tag && npm run our:release:push",
+    "our:release": "npm run our:release:prepare && npm run our:release:check-changelog && npm run our:release:check-dirty && npm run our:release:tag && npm run our:release:push",
+    "our:release:check-changelog": "cat ./HISTORY.md | grep v$npm_package_version || (echo add a changelog entry for v$npm_package_version && exit -1)",
+    "our:release:check-dirty": "git diff --exit-code",
     "our:release:prepare": "npm run our:clean && npm run our:compile && npm run our:test && npm run our:meta",
-    "our:release:check": "npm run our:release:check:changelog && npm run our:release:check:dirty",
-    "our:release:check:changelog": "cat ./HISTORY.md | grep v$npm_package_version || (echo add a changelog entry for v$npm_package_version && exit -1)",
-    "our:release:check:dirty": "git diff --exit-code",
-    "our:release:tag": "export MESSAGE=$(cat ./HISTORY.md | sed -n \"/## v$npm_package_version/,/##/p\" | sed 's/## //' | awk 'NR>1{print buf}{buf = $0}') && test \"$MESSAGE\" || (echo 'proper changelog entry not found' && exit -1) && git tag v$npm_package_version -am \"$MESSAGE\"",
     "our:release:push": "git push origin master && git push origin --tags",
+    "our:release:tag": "export MESSAGE=$(cat ./HISTORY.md | sed -n \"/## v$npm_package_version/,/##/p\" | sed 's/## //' | awk 'NR>1{print buf}{buf = $0}') && test \"$MESSAGE\" || (echo 'proper changelog entry not found' && exit -1) && git tag v$npm_package_version -am \"$MESSAGE\"",
+    "our:setup": "npm run our:setup:npm",
+    "our:setup:npm": "npm install",
+    "our:test": "npm run our:verify && npm test",
+    "our:verify": "npm run our:verify:directory && npm run our:verify:eslint",
+    "our:verify:directory": "npx valid-directory",
+    "our:verify:eslint": "eslint --fix './*.js'",
     "test": "node --harmony ./test.js --joe-reporter=console"
   },
   "dependencies": {},
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "joe": "^2.0.2",
+    "joe-reporter-console": "^2.0.2",
+    "prettier": "^1.15.2",
+    "projectz": "^1.5.3",
+    "valid-directory": "^1.0.0"
+  },
+  "eslintConfig": {
+    "extends": [
+      "eslint:recommended",
+      "./rules.js",
+      "./adapt.js"
+    ]
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true
+  },
+  "contributors": [
+    "Benjamin Lupton <b@lupton.cc> (http://balupton.com)",
+    "Michael Duane Mooring (http://mdm.cc)",
+    "Rob Loach (http://robloach.net)"
+  ]
 }

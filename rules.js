@@ -1,16 +1,12 @@
-// 2018 November 21
-// https://github.com/bevry/base
-// http://eslint.org
-/* eslint no-warning-comments: 0 */
+// @ts-check
 'use strict'
 
-const IGNORE = 0, WARN = 1, ERROR = 2, MAX_PARAMS = 4
+const IGNORE = 0,
+	WARN = 1,
+	ERROR = 2,
+	MAX_PARAMS = 4
 
 const config = {
-	extends: ['eslint:recommended'],
-	plugins: [],
-	parserOptions: { ecmaFeatures: {} },
-	env: {},
 	/** @type {Object.<string, number | Array<any>>} */
 	rules: {
 		// ----------------------------
@@ -33,7 +29,6 @@ const config = {
 		// instead of:
 		// }
 		// else {
-
 
 		// --------------------------------------
 		// Possible Errors
@@ -126,14 +121,16 @@ const config = {
 		'use-isnan': ERROR,
 
 		// We use JSDoc again
-		'valid-jsdoc': [ERROR, {
-			requireParamDescription: false,
-			requireReturnDescription: false
-		}],
+		'valid-jsdoc': [
+			ERROR,
+			{
+				requireParamDescription: false,
+				requireReturnDescription: false
+			}
+		],
 
 		// Seems like a good idea to error about this
 		'valid-typeof': ERROR,
-
 
 		// --------------------------------------
 		// Best Practices
@@ -154,13 +151,13 @@ const config = {
 		'class-methods-use-this': WARN,
 
 		// Disable complexity checks, they are annoying and not that useful in detecting actual complexity
-		'complexity': IGNORE,
+		complexity: IGNORE,
 
 		// We use blank returns for break statements and for returning void
 		'consistent-return': IGNORE,
 
 		// Always require curly braces unless the statement is all on a single line
-		'curly': [ERROR, 'multi-line'],
+		curly: [ERROR, 'multi-line'],
 
 		// If we don't have a default cause, it probably means we should throw an error
 		'default-case': ERROR,
@@ -175,7 +172,7 @@ const config = {
 		'dot-notation': ERROR,
 
 		// Unless you are doing == null, then force === to avoid truthy/falsey mistakes
-		'eqeqeq': [ERROR, 'allow-null'],
+		eqeqeq: [ERROR, 'allow-null'],
 
 		// Always use hasOwnProperty when doing for in
 		'guard-for-in': ERROR,
@@ -334,13 +331,16 @@ const config = {
 		'no-void': ERROR,
 
 		// Warn about todos
-		'no-warning-comments': [WARN, { terms: ['todo', 'fixme'], location: 'anywhere' }],
+		'no-warning-comments': [
+			WARN,
+			{ terms: ['todo', 'fixme'], location: 'anywhere' }
+		],
 
 		// We never use this, it seems silly to allow this
 		'no-with': ERROR,
 
 		// Always specify a radix to avoid errors
-		'radix': ERROR,
+		radix: ERROR,
 
 		// We appreciate the clarity late defines offer
 		'vars-on-top': IGNORE,
@@ -350,8 +350,7 @@ const config = {
 
 		// Because we force === and never allow assignments in conditions
 		// we have no need for yoda statements, so disable them
-		'yoda': [ERROR, 'never'],
-
+		yoda: [ERROR, 'never'],
 
 		// --------------------------------------
 		// Strict Mode
@@ -359,8 +358,7 @@ const config = {
 
 		// Ensure that use strict is specified to prevent the runtime erorr:
 		// SyntaxError: Block-scoped declarations (let, const, function, class) not yet supported outside strict mode
-		'strict': [ERROR, 'global'],
-
+		strict: [ERROR, 'global'],
 
 		// --------------------------------------
 		// Variables
@@ -403,7 +401,6 @@ const config = {
 		// Error when we try and use something before it is defined
 		'no-use-before-define': ERROR,
 
-
 		// --------------------------------------
 		// Node.js and CommonJS
 		// These rules are specific to JavaScript running on Node.js or using CommonJS in the browser.
@@ -438,7 +435,6 @@ const config = {
 		// Sometimes sync methods are useful, so warn but don't error
 		'no-sync': WARN,
 
-
 		// --------------------------------------
 		// Stylistic
 		// These rules are purely matters of style and are quite subjective.
@@ -453,7 +449,7 @@ const config = {
 		'brace-style': [ERROR, 'stroustrup', { allowSingleLine: true }],
 
 		// Use camel case
-		'camelcase': ERROR,
+		camelcase: ERROR,
 
 		// ES6 supports dangling commas
 		'comma-dangle': [ERROR, 'never'],
@@ -496,30 +492,37 @@ const config = {
 		'id-match': IGNORE,
 
 		// Use tabs and indent case blocks
-		'indent': [ERROR, 'tab', {
-			SwitchCase: 1,
-			VariableDeclarator: 0,
-			outerIIFEBody: 1,
-			MemberExpression: 1,
-			FunctionDeclaration: {
-				body: 1,
-				parameters: 0
-			},
-			FunctionExpression: {
-				body: 1,
-				parameters: 0
+		indent: [
+			ERROR,
+			'tab',
+			{
+				SwitchCase: 1,
+				VariableDeclarator: 0,
+				outerIIFEBody: 1,
+				MemberExpression: 1,
+				FunctionDeclaration: {
+					body: 1,
+					parameters: 0
+				},
+				FunctionExpression: {
+					body: 1,
+					parameters: 0
+				}
 			}
-		}],
+		],
 		// ^ broken before, let us try again
 
 		// Prefer double qoutes for JSX properties: <a b="c" />, <a b='"' />
 		'jsx-quotes': [ERROR, 'prefer-double'],
 
 		// Space after the colon
-		'key-spacing': [ERROR, {
-			beforeColon: false,
-			afterColon: true
-		}],
+		'key-spacing': [
+			ERROR,
+			{
+				beforeColon: false,
+				afterColon: true
+			}
+		],
 
 		// Always force a space before and after a keyword
 		'keyword-spacing': [ERROR],
@@ -531,16 +534,22 @@ const config = {
 		'linebreak-style': [ERROR, 'unix'],
 
 		// Enforce new lines before block comments
-		'lines-around-comment': [ERROR, {
-			beforeBlockComment: true,
-			allowBlockStart: true
-		}],
+		'lines-around-comment': [
+			ERROR,
+			{
+				beforeBlockComment: true,
+				allowBlockStart: true
+			}
+		],
 
 		// Enforce directives with no line above but a line below
-		'lines-around-directive': [ERROR, {
-			before: 'never',
-			after: 'always'
-		}],
+		'lines-around-directive': [
+			ERROR,
+			{
+				before: 'never',
+				after: 'always'
+			}
+		],
 
 		// Disabled to ensure consistency with complexity option
 		'max-depth': IGNORE,
@@ -665,7 +674,7 @@ const config = {
 		'quote-props': [ERROR, 'consistent-as-needed'],
 
 		// Use single quotes where escaping isn't needed
-		'quotes': [ERROR, 'single', 'avoid-escape'],
+		quotes: [ERROR, 'single', 'avoid-escape'],
 
 		// We use YUIdoc
 		'require-jsdoc': IGNORE,
@@ -674,7 +683,7 @@ const config = {
 		'semi-spacing': [ERROR, { before: false, after: true }],
 
 		// Never use semicolons
-		'semi': [ERROR, 'never'],
+		semi: [ERROR, 'never'],
 
 		// Importance makes more sense than alphabetical
 		'sort-keys': IGNORE,
@@ -707,7 +716,6 @@ const config = {
 
 		// We do this, seems to work well
 		'wrap-regex': ERROR,
-
 
 		// --------------------------------------
 		// ECMAScript 6 / ES6
@@ -779,7 +787,7 @@ const config = {
 		'prefer-numeric-literals': ERROR,
 
 		// Controversial change, but makes sense to move towards to reduce the risk of bad people overwriting apply and call
-		// https://github.com/eslint/eslint/issues/ERROR939
+		// https://github.com/eslint/eslint/issues/2939
 		// Ignoring because node does not yet support it, so we don't want to get the performance hit of using the compiled ES5 version
 		'prefer-reflect': IGNORE,
 
@@ -808,157 +816,9 @@ const config = {
 		'template-curly-spacing': [ERROR, 'never'],
 
 		// Our preference
-		'yield-star-spacing': [ERROR, 'both'],
-
-
-		// --------------------------------------
-		// Plugin: Flow
-
-		// Not sure why, but okay
-		'flow-vars/define-flow-type': WARN,
-		'flow-vars/use-flow-type': WARN
+		'yield-star-spacing': [ERROR, 'both']
 	}
 }
-
-// ------------------------------------
-// Enhancements
-
-// Load data.json file if it exists
-const rules = Object.keys(config.rules)
-let data = {}, devDeps = []
-try {
-	// @ts-ignore
-	data = require('./package.json') || {}
-	devDeps = Object.keys(data.devDependencies || {})
-}
-catch (err) { }
-
-// Set our defaults
-let parser, language = 'esnext', ecmaVersion = (new Date().getFullYear() + 1), sourceType = 'script'
-
-// If we have editions, then override our defaults
-if (data.editions) {
-	const sourceEdition = data.editions[0]
-	const editionTags = (sourceEdition.tags || sourceEdition.syntaxes || [])
-	if (editionTags.length) {
-		language = editionTags[0]
-		if (language === 'typescript') {
-			sourceType = 'module'
-		}
-		else if (language.startsWith('es') && language !== 'esnext') {
-			ecmaVersion = Number(language.substr(2))
-		}
-		if (editionTags.includes('import')) {
-			sourceType = 'module'
-		}
-		config.parserOptions.ecmaFeatures.jsx = editionTags.includes('jsx') || editionTags.includes('tsx')
-	}
-}
-
-// Apply our defaults to the configuration
-config.parserOptions.ecmaVersion = ecmaVersion
-config.parserOptions.sourceType = sourceType
-
-// Set environments depending on whether we need them or not
-config.env.es6 = Boolean(config.parserOptions.ecmaVersion >= 6)
-config.env.node = Boolean(data.engines && data.engines.node)
-config.env.browser = Boolean(data.browser)
-if (config.env.browser) {
-	config.env.commonjs = true
-	if (config.env.node) {
-		config.env['shared-node-browser'] = true
-	}
-}
-
-// If on legacy javascript, disable esnext rules
-if (config.parserOptions.ecmaVersion && config.parserOptions.ecmaVersion <= 5) {
-	config.rules['no-var'] = IGNORE
-	config.rules['object-shorthand'] = [ERROR, 'never']
-	config.rules['prefer-rest-params'] = IGNORE
-	config.rules['prefer-spread'] = IGNORE
-	config.rules['prefer-const'] = IGNORE
-}
-
-// If on typescript, disable incompatible rules
-if (language === 'typescript') {
-	// https://github.com/eslint/typescript-eslint-parser/issues/557
-	config.rules['no-undef'] = IGNORE
-	// typedoc only uses a subset of jsdoc
-	config.rules['valid-jsdoc'] = IGNORE
-}
-
-// Custom Parser: TypeScript
-if (devDeps.includes('typescript-eslint-parser')) {
-	parser = 'typescript-eslint-parser'
-}
-
-// Custom Parser: Babel
-else if (devDeps.includes('babel-eslint')) {
-	parser = 'babel-eslint'
-}
-
-// Apply Parser
-if (parser) {
-	config.parser = parser
-}
-
-// Plugin: TypeScript
-if (devDeps.includes('eslint-plugin-typescript')) {
-	config.plugins.push('typescript')
-}
-else {
-	// Remove typescript rules if plugin not installed
-	rules.forEach(function (key) {
-		if (key.startsWith('typescript/')) {
-			delete config.rules[key]
-		}
-	})
-}
-
-// Plugin: React
-if (devDeps.includes('eslint-plugin-react')) {
-	config.extends.push('plugin:react/recommended')
-	config.plugins.push('react')
-}
-
-// Plugin: Babel
-if (devDeps.includes('eslint-plugin-babel')) {
-	// Remove rules that babel rules replace
-	config.plugins.push('babel')
-	const replacements = [
-		'new-cap',
-		'object-curly-spacing'
-	]
-	replacements.forEach(function (key) {
-		if (rules.includes(key)) {
-			config.rules['babel/' + key] = config.rules[key]
-			config.rules[key] = IGNORE
-		}
-	})
-}
-else {
-	// Remove babel rules if not using babel
-	rules.forEach(function (key) {
-		if (key.startsWith('babel/')) {
-			delete config.rules[key]
-		}
-	})
-}
-
-// Plugin: Flow
-if (devDeps.includes('eslint-plugin-flow-vars')) {
-	// Add flow plugin if installed
-	config.plugins.push('flow-vars')
-}
-else {
-	// Remove flow rules if plugin not installed
-	rules.forEach(function (key) {
-		if (key.startsWith('flow-vars/')) {
-			delete config.rules[key]
-		}
-	})
-}
-
 
 // ------------------------------------
 // Export

@@ -29,7 +29,7 @@
 
 Bevry's ESLint configuration is an adaptive configuration that automatically configures ESLint based on the following:
 
--   If you are using [Editions](https://github.com/bevry/editions), then make use of the information it provides
+-   If you are using [Editions](https://editions.bevry.me), then make use of the information it provides
 -   If you are using Modules (import/export), then configure ESLint for it
 -   If you are using a ES5 or below, then configure ESLint for it
     -   Disables incompatible rules that require ES6+

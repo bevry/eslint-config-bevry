@@ -4,7 +4,6 @@
 
 <!-- /TITLE -->
 
-
 <!-- BADGES/ -->
 
 <span class="badge-travisci"><a href="http://travis-ci.org/bevry/eslint-config-bevry" title="Check this project's build status on TravisCI"><img src="https://img.shields.io/travis/bevry/eslint-config-bevry/master.svg" alt="Travis CI Build Status" /></a></span>
@@ -26,17 +25,9 @@
 
 <!-- /BADGES -->
 
-
-<!-- DESCRIPTION/ -->
-
-Bevry's ESLint configuration package.
-
-<!-- /DESCRIPTION -->
-
-
 ## Usage
 
-The Bevry ESLint configuration is an adaptive configuration that automatically configures ESLint based on the following:
+Bevry's ESLint configuration is an adaptive configuration that automatically configures ESLint based on the following:
 
 -   If you are using [Editions](https://github.com/bevry/editions), then make use of the information it provides
 -   If you are using Modules (import/export), then configure ESLint for it
@@ -86,7 +77,6 @@ If you would like more control, rather than extending `bevry` directly, you can 
 
 <!-- /HISTORY -->
 
-
 <!-- CONTRIBUTE/ -->
 
 <h2>Contribute</h2>
@@ -94,7 +84,6 @@ If you would like more control, rather than extending `bevry` directly, you can 
 <a href="https://github.com/bevry/eslint-config-bevry/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
 
 <!-- /CONTRIBUTE -->
-
 
 <!-- BACKERS/ -->
 
@@ -132,7 +121,6 @@ These amazing people have contributed code to this project:
 <a href="https://github.com/bevry/eslint-config-bevry/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
 
 <!-- /BACKERS -->
-
 
 <!-- LICENSE/ -->
 

@@ -1,5 +1,9 @@
 # History
 
+## v1.0.2 2018 November 22
+
+-   Included file extension in `package.json:main`
+
 ## v1.0.1 2018 November 22
 
 -   Updated description

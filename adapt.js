@@ -66,11 +66,13 @@ if (data.editions) {
 	}
 	if (editionTags.includes('typescript')) {
 		typescript = true
-		sourceType = 'module'
 	}
-	if (editionTags.includes('import')) {
+	if (editionTags.includes('module') || editionTags.includes('import')) {
 		sourceType = 'module'
-	} else if (editionTags.includes('require')) {
+	} else if (
+		editionTags.includes('script') ||
+		editionTags.includes('require')
+	) {
 		sourceType = 'script'
 	}
 	if (editionTags.includes('flowtype')) {

@@ -709,7 +709,7 @@ const config = {
 
 		// We use this
 		// 'spaced-line-comment': ERROR,
-		'spaced-comment': ERROR,
+		'spaced-comment': [ERROR, 'always', { markers: ['/'] }],
 
 		// When would we ever do this? Makes no sense
 		'unicode-bom': [ERROR, 'never'],

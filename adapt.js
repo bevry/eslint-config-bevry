@@ -17,14 +17,13 @@ const IGNORE = 0,
 	ERROR = 2
 
 const config = {
+	/** @type {Object.<string, number | Array<any>>} */
+	rules: {},
 	settings: {},
 	extends: [],
 	plugins: [],
 	parserOptions: { ecmaFeatures: {} },
-	env: {},
-
-	/** @type {Object.<string, number | Array<any>>} */
-	rules: {}
+	env: {}
 }
 
 // ------------------------------------

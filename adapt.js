@@ -35,12 +35,12 @@ const semver = require('semver')
 const path = require('path')
 const cwd = process.cwd()
 const rules = Object.keys(config.rules)
-let data = {},
-	versions = {}
+const data = {}
+const versions = {}
 try {
 	// Read package.json
 	const packageLocation = path.join(cwd, 'package.json')
-	data = require(packageLocation) || {}
+	Object.assign(data, require(packageLocation))
 
 	// Determine the dependency versions
 	const deps = Object.assign(

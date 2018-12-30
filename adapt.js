@@ -17,6 +17,7 @@ const IGNORE = 0,
 	ERROR = 2
 
 const config = {
+	settings: {},
 	extends: [],
 	plugins: [],
 	parserOptions: { ecmaFeatures: {} },
@@ -30,16 +31,33 @@ const config = {
 // Load
 
 // Load data.json file if it exists
+const semver = require('semver')
+const path = require('path')
+const cwd = process.cwd()
 const rules = Object.keys(config.rules)
 let data = {},
-	devDeps = []
+	versions = {}
 try {
-	const cwd = process.cwd()
-	const packageLocation = require('path').join(cwd, 'package.json')
-	// @ts-ignore
+	// Read package.json
+	const packageLocation = path.join(cwd, 'package.json')
 	data = require(packageLocation) || {}
-	devDeps = Object.keys(data.devDependencies || {})
+
+	// Determine the dependency versions
+	const deps = Object.assign(
+		{},
+		data.dependencies || {},
+		data.devDependencies || {}
+	)
+	Object.keys(deps).forEach(function(name) {
+		const version = deps[name]
+		versions[name] = semver.clean(version) || semver.coerce(version).version
+	})
 } catch (err) {}
+
+// Helpers
+function hasDep(name) {
+	return Boolean(versions[name])
+}
 
 // ------------------------------------
 // Enhancements
@@ -48,9 +66,9 @@ try {
 let parser,
 	ecmaVersion = new Date().getFullYear() + 1,
 	sourceType = 'script',
-	react = devDeps.includes('eslint-plugin-react'),
-	flowtype = devDeps.includes('eslint-plugin-flow-vars'),
-	typescript = devDeps.includes('typescript'),
+	react = hasDep('react'),
+	flowtype = hasDep('flow-bin'),
+	typescript = hasDep('typescript'),
 	jsx = false,
 	prettier = Boolean(data.prettier)
 
@@ -87,14 +105,14 @@ if (data.editions) {
 }
 
 // Custom Parser: TypeScript
-if (devDeps.includes('typescript-eslint-parser')) {
+if (hasDep('typescript-eslint-parser')) {
 	parser = 'typescript-eslint-parser'
 } else if (typescript) {
 	throw new MissingError('typescript-eslint-parser')
 }
 
 // Custom Parser: Babel
-if (devDeps.includes('babel-eslint')) {
+if (hasDep('babel-eslint')) {
 	parser = 'babel-eslint'
 }
 
@@ -137,22 +155,37 @@ if (typescript) {
 }
 
 // Plugin: TypeScript
-if (devDeps.includes('eslint-plugin-typescript')) {
+if (hasDep('eslint-plugin-typescript')) {
 	config.plugins.push('typescript')
 } else if (typescript) {
 	throw new MissingError('eslint-plugin-typescript')
 }
 
 // Plugin: React
-if (devDeps.includes('eslint-plugin-react')) {
+if (hasDep('eslint-plugin-react')) {
 	config.extends.push('plugin:react/recommended')
 	config.plugins.push('react')
+	Object.assign(config.settings, {
+		react: {
+			version: versions.react
+		}
+	})
 } else if (react) {
 	throw new MissingError('eslint-plugin-react')
 }
 
+// Plugin: React Hooks
+if (hasDep('eslint-plugin-react-hooks')) {
+	config.plugins.push('react-hooks')
+	Object.assign(config.rules, {
+		'react-hooks/rules-of-hooks': ERROR
+	})
+} else if (react) {
+	throw new MissingError('eslint-plugin-react-hooks')
+}
+
 // Plugin: Babel
-if (devDeps.includes('eslint-plugin-babel')) {
+if (hasDep('eslint-plugin-babel')) {
 	// Remove rules that babel rules replace
 	config.plugins.push('babel')
 	const replacements = [
@@ -175,7 +208,7 @@ if (devDeps.includes('eslint-plugin-babel')) {
 }
 
 // Plugin: Flow
-if (devDeps.includes('eslint-plugin-flow-vars')) {
+if (hasDep('eslint-plugin-flow-vars')) {
 	config.plugins.push('flow-vars')
 	Object.assign(config.rules, {
 		'flow-vars/define-flow-type': WARN,
@@ -187,21 +220,21 @@ if (devDeps.includes('eslint-plugin-flow-vars')) {
 
 // Plugin: Prettier
 if (
-	devDeps.includes('eslint-plugin-prettier') ||
-	devDeps.includes('eslint-config-prettier') ||
-	devDeps.includes('prettier')
+	hasDep('eslint-plugin-prettier') ||
+	hasDep('eslint-config-prettier') ||
+	hasDep('prettier')
 ) {
 	prettier = true
 }
 if (prettier) {
 	// Ensure dependencies exist
-	if (devDeps.includes('eslint-plugin-prettier') === false) {
+	if (hasDep('eslint-plugin-prettier') === false) {
 		throw new MissingError('eslint-plugin-prettier')
 	}
-	if (devDeps.includes('eslint-config-prettier') === false) {
+	if (hasDep('eslint-config-prettier') === false) {
 		throw new MissingError('eslint-config-prettier')
 	}
-	if (devDeps.includes('prettier') === false) throw new MissingError('prettier')
+	if (hasDep('prettier') === false) throw new MissingError('prettier')
 
 	// Add the plugin
 	config.plugins.push('prettier')

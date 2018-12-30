@@ -4,7 +4,6 @@
 
 <!-- /TITLE -->
 
-
 <!-- BADGES/ -->
 
 <span class="badge-travisci"><a href="http://travis-ci.org/bevry/eslint-config-bevry" title="Check this project's build status on TravisCI"><img src="https://img.shields.io/travis/bevry/eslint-config-bevry/master.svg" alt="Travis CI Build Status" /></a></span>
@@ -26,7 +25,6 @@
 
 <!-- /BADGES -->
 
-
 Bevry's ESLint configuration is an adaptive configuration that automatically configures ESLint based on the following:
 
 -   If you are using [Editions](https://editions.bevry.me), then make use of the information it provides
@@ -35,7 +33,8 @@ Bevry's ESLint configuration is an adaptive configuration that automatically con
     -   Disables incompatible rules that require ES6+
 -   If you are using JSX, then configure ESLint for it
 -   If you are using React, then configure ESLint for it
-    -   Enables the plugin `eslint-plugin-react` and configures it with its recommended rules
+    -   Enables the plugin `eslint-plugin-react` and configures it with its recommended rules and the react version you are using
+    -   Enables the plugin `eslint-plugin-react-hooks` and configures it with its recommended rules
 -   If you are using TypeScript, then configure ESLint for it
     -   Enables the plugin `eslint-plugin-typescript`
     -   Configures the parser as `typescript-eslint-parser`
@@ -69,6 +68,12 @@ If you would like more control, rather than extending `bevry` directly, you can 
 -   `bevry/rules` contains the rules for our coding standard, you can use or not use this to your liking
 -   `bevry/adapt` contains the adaptive configuration, this should be the last extension you apply
 
+To ensure it is working, compare the results of the following command with what you would expect:
+
+```bash
+npx eslint --print-config .
+```
+
 <!-- HISTORY/ -->
 
 <h2>History</h2>
@@ -77,7 +82,6 @@ If you would like more control, rather than extending `bevry` directly, you can 
 
 <!-- /HISTORY -->
 
-
 <!-- CONTRIBUTE/ -->
 
 <h2>Contribute</h2>
@@ -85,7 +89,6 @@ If you would like more control, rather than extending `bevry` directly, you can 
 <a href="https://github.com/bevry/eslint-config-bevry/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
 
 <!-- /CONTRIBUTE -->
-
 
 <!-- BACKERS/ -->
 
@@ -123,7 +126,6 @@ These amazing people have contributed code to this project:
 <a href="https://github.com/bevry/eslint-config-bevry/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
 
 <!-- /BACKERS -->
-
 
 <!-- LICENSE/ -->
 

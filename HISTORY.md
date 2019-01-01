@@ -1,5 +1,9 @@
 # History
 
+## v1.1.1 2018 January 1
+
+-   Fixed `Parsing error: Invalid ecmaVersion` by defaulting `ecmaVersion` to `2019` instead of the dynamic next year, which is now `2020`
+
 ## v1.1.0 2018 December 31
 
 Adapter changes:

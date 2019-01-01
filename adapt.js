@@ -63,7 +63,7 @@ function hasDep(name) {
 
 // Set our defaults
 let parser,
-	ecmaVersion = new Date().getFullYear() + 1,
+	ecmaVersion = 2019,
 	sourceType = 'script',
 	react = hasDep('react'),
 	flowtype = hasDep('flow-bin'),

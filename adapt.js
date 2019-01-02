@@ -26,6 +26,14 @@ const config = {
 	env: {}
 }
 
+// Version Helpers
+const data = {}
+const deps = {}
+const versions = {}
+function hasDep(name) {
+	return Boolean(deps[name])
+}
+
 // ------------------------------------
 // Load
 
@@ -34,29 +42,23 @@ const semver = require('semver')
 const path = require('path')
 const cwd = process.cwd()
 const rules = Object.keys(config.rules)
-const data = {}
-const versions = {}
+
+// Read package.json
 try {
-	// Read package.json
 	const packageLocation = path.join(cwd, 'package.json')
 	Object.assign(data, require(packageLocation))
-
-	// Determine the dependency versions
-	const deps = Object.assign(
-		{},
-		data.dependencies || {},
-		data.devDependencies || {}
-	)
-	Object.keys(deps).forEach(function(name) {
-		const version = deps[name]
-		versions[name] = semver.clean(version) || semver.coerce(version).version
-	})
 } catch (err) {}
 
-// Helpers
-function hasDep(name) {
-	return Boolean(versions[name])
-}
+// Load the dependencies and versions
+Object.assign(deps, data.dependencies || {}, data.devDependencies || {})
+Object.keys(deps).forEach(name => {
+	const range = deps[name]
+	const clean = semver.clean(range)
+	const coerce = semver.coerce(range)
+	const version = clean || (coerce && coerce.version) || null
+	// version will resolve to null in the case that the range is a github reference, instead of a verison range
+	versions[name] = version
+})
 
 // ------------------------------------
 // Enhancements

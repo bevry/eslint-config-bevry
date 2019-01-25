@@ -106,10 +106,10 @@ if (data.editions) {
 }
 
 // Custom Parser: TypeScript
-if (hasDep('typescript-eslint-parser')) {
-	parser = 'typescript-eslint-parser'
+if (hasDep('@typescript-eslint/parser')) {
+	parser = '@typescript-eslint/parser'
 } else if (typescript) {
-	throw new MissingError('typescript-eslint-parser')
+	throw new MissingError('@typescript-eslint/parser')
 }
 
 // Custom Parser: Babel
@@ -156,10 +156,10 @@ if (typescript) {
 }
 
 // Plugin: TypeScript
-if (hasDep('eslint-plugin-typescript')) {
-	config.plugins.push('typescript')
+if (hasDep('@typescript-eslint/eslint-plugin')) {
+	config.plugins.push('@typescript-eslint')
 } else if (typescript) {
-	throw new MissingError('eslint-plugin-typescript')
+	throw new MissingError('@typescript-eslint/eslint-plugin')
 }
 
 // Plugin: React

@@ -1,10 +1,16 @@
 # History
 
-## v1.1.2 2018 January 2
+## v1.2.0 2019 January 26
+
+-   Swap out support for the deprecated typescript eslint packages with the new packages that they recommend
+    -   `typescript-eslint-parser` to `@typescript-eslint/parser`
+    -   `eslint-plugin-typescript` to `@typescript-eslint/eslint-plugin`
+
+## v1.1.2 2019 January 2
 
 -   Fixed dependencies that are github references preventing dependency detection from functioning correctly
 
-## v1.1.1 2018 January 1
+## v1.1.1 2019 January 1
 
 -   Fixed `Parsing error: Invalid ecmaVersion` by defaulting `ecmaVersion` to `2019` instead of the dynamic next year, which is now `2020`
 

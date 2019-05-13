@@ -1,5 +1,10 @@
 # History
 
+## v1.2.1 2019 May 13
+
+-   Change engines to be `>=6`
+-   Update dependencies
+
 ## v1.2.0 2019 January 26
 
 -   Swap out support for the deprecated typescript eslint packages with the new packages that they recommend

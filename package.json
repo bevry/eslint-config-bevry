@@ -48,7 +48,8 @@
       "opencollectiveUsername": "bevry",
       "patreonUsername": "bevry",
       "paypalURL": "https://bevry.me/paypal",
-      "wishlistURL": "https://bevry.me/wishlist"
+      "wishlistURL": "https://bevry.me/wishlist",
+      "travisTLD": "com"
     }
   },
   "author": "2018+ Benjamin Lupton <b@lupton.cc> (http://balupton.com)",
@@ -72,17 +73,17 @@
   },
   "main": "index.js",
   "devDependencies": {
-    "eslint": "^5.16.0",
-    "eslint-config-prettier": "^4.2.0",
+    "eslint": "^6.0.1",
+    "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.1.0",
     "joe": "^2.0.2",
     "joe-reporter-console": "^2.0.2",
-    "prettier": "^1.17.0",
+    "prettier": "^1.18.2",
     "projectz": "^1.7.4",
     "valid-directory": "^1.0.0"
   },
   "scripts": {
-    "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out",
+    "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
     "our:compile": "echo no need for this project",
     "our:deploy": "echo no need for this project",
     "our:meta": "npm run our:meta:projectz",

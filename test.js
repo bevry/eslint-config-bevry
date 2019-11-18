@@ -1,9 +1,9 @@
 // @ts-check
 'use strict'
 
-const joe = require('joe')
+const kava = require('kava')
 
-joe.suite(function(suite, test) {
+kava.suite('eslint-config-bevry', function(suite, test) {
 	const files = ['index', 'rules', 'adapt']
 	files.forEach(function(file) {
 		const path = `./${file}.js`

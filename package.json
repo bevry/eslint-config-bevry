@@ -134,7 +134,8 @@
     "singleQuote": true
   },
   "boundation": {
-    "adaptive": false,
+    "compileNode": false,
+    "ltsNodeOnly": true,
     "sourceDirectory": "."
   }
 }

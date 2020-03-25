@@ -125,8 +125,8 @@ const config = {
 			ERROR,
 			{
 				requireParamDescription: false,
-				requireReturnDescription: false
-			}
+				requireReturnDescription: false,
+			},
 		],
 
 		// Seems like a good idea to error about this
@@ -333,7 +333,7 @@ const config = {
 		// Warn about todos
 		'no-warning-comments': [
 			WARN,
-			{ terms: ['todo', 'fixme'], location: 'anywhere' }
+			{ terms: ['todo', 'fixme'], location: 'anywhere' },
 		],
 
 		// We never use this, it seems silly to allow this
@@ -502,13 +502,13 @@ const config = {
 				MemberExpression: 1,
 				FunctionDeclaration: {
 					body: 1,
-					parameters: 0
+					parameters: 0,
 				},
 				FunctionExpression: {
 					body: 1,
-					parameters: 0
-				}
-			}
+					parameters: 0,
+				},
+			},
 		],
 		// ^ broken before, let us try again
 
@@ -520,8 +520,8 @@ const config = {
 			ERROR,
 			{
 				beforeColon: false,
-				afterColon: true
-			}
+				afterColon: true,
+			},
 		],
 
 		// Always force a space before and after a keyword
@@ -538,8 +538,8 @@ const config = {
 			ERROR,
 			{
 				beforeBlockComment: true,
-				allowBlockStart: true
-			}
+				allowBlockStart: true,
+			},
 		],
 
 		// Enforce directives with no line above but a line below
@@ -547,8 +547,8 @@ const config = {
 			ERROR,
 			{
 				before: 'never',
-				after: 'always'
-			}
+				after: 'always',
+			},
 		],
 
 		// Disabled to ensure consistency with complexity option
@@ -816,8 +816,8 @@ const config = {
 		'template-curly-spacing': [ERROR, 'never'],
 
 		// Our preference
-		'yield-star-spacing': [ERROR, 'both']
-	}
+		'yield-star-spacing': [ERROR, 'both'],
+	},
 }
 
 // ------------------------------------

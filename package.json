@@ -1,25 +1,24 @@
 {
   "name": "eslint-config-bevry",
-  "version": "2.3.0",
+  "version": "3.0.0",
   "description": "Bevry's ESLint configuration is an adaptive configuration that automatically configures ESLint.",
   "homepage": "https://github.com/bevry/eslint-config-bevry",
   "license": "MIT",
   "keywords": [
-    "eslint",
+    "babel",
     "bevry",
+    "editions",
+    "eslint",
     "eslint-config",
     "eslintconfig",
-    "prettier",
-    "typescript",
     "flow",
     "flow-type",
     "flowtype",
-    "babel",
-    "editions",
-    "react",
     "jsx",
-    "tsx",
-    "lint"
+    "lint",
+    "prettier",
+    "react",
+    "tsx"
   ],
   "badges": {
     "list": [
@@ -60,8 +59,7 @@
   "contributors": [
     "Benjamin Lupton <b@lupton.cc> (http://balupton.com)",
     "Michael Duane Mooring (http://mdm.cc)",
-    "Rob Loach <robloach@gmail.com> (http://robloach.net)",
-    "dependabot[bot] (http://github.com/apps/dependabot)"
+    "Rob Loach <robloach@gmail.com> (http://robloach.net)"
   ],
   "bugs": {
     "url": "https://github.com/bevry/eslint-config-bevry/issues"
@@ -71,11 +69,11 @@
     "url": "https://github.com/bevry/eslint-config-bevry.git"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=10"
   },
   "editions": [
     {
-      "description": "esnext source code with require for modules",
+      "description": "ESNext source code for Node.js with Require for modules",
       "directory": ".",
       "entry": "index.js",
       "tags": [
@@ -84,24 +82,24 @@
         "require"
       ],
       "engines": {
-        "node": "8 || 10 || 12"
+        "node": "10 || 12"
       }
     }
   ],
   "type": "commonjs",
   "main": "index.js",
   "dependencies": {
-    "semver": "^6.3.0"
+    "semver": "^7.1.3"
   },
   "devDependencies": {
-    "assert-helpers": "^5.8.0",
-    "eslint": "^6.7.2",
-    "eslint-config-prettier": "^6.7.0",
-    "eslint-plugin-prettier": "^3.1.1",
-    "kava": "^4.3.0",
-    "prettier": "^1.19.1",
-    "projectz": "^1.15.0",
-    "valid-directory": "^1.5.0"
+    "assert-helpers": "^6.0.0",
+    "eslint": "^6.8.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-prettier": "^3.1.2",
+    "kava": "^4.4.0",
+    "prettier": "^2.0.2",
+    "projectz": "^1.19.0",
+    "valid-directory": "^1.6.0"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
@@ -119,9 +117,9 @@
     "our:setup:install": "npm install",
     "our:test": "npm run our:verify && npm test",
     "our:verify": "npm run our:verify:directory && npm run our:verify:eslint && npm run our:verify:prettier",
-    "our:verify:directory": "npx valid-directory",
+    "our:verify:directory": "valid-directory",
     "our:verify:eslint": "eslint --fix --ignore-pattern '**/*.d.ts' --ignore-pattern '**/vendor/' --ignore-pattern '**/node_modules/' --ext .mjs,.js,.jsx,.ts,.tsx .",
-    "our:verify:prettier": "prettier --write ./**",
+    "our:verify:prettier": "prettier --write .",
     "test": "node ./test.js"
   },
   "eslintConfig": {

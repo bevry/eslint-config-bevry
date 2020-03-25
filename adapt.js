@@ -23,7 +23,7 @@ const config = {
 	extends: [],
 	plugins: [],
 	parserOptions: { ecmaFeatures: {} },
-	env: {}
+	env: {},
 }
 
 // Version Helpers
@@ -51,7 +51,7 @@ try {
 
 // Load the dependencies and versions
 Object.assign(deps, data.dependencies || {}, data.devDependencies || {})
-Object.keys(deps).forEach(name => {
+Object.keys(deps).forEach((name) => {
 	const range = deps[name]
 	const clean = semver.clean(range)
 	const coerce = semver.coerce(range)
@@ -78,7 +78,7 @@ if (data.editions) {
 	const sourceEdition = data.editions[0]
 	const editionTags = sourceEdition.tags || sourceEdition.syntaxes || []
 	const ecmaTag = editionTags.find(
-		tag => tag.startsWith('es') && tag !== 'esnext'
+		(tag) => tag.startsWith('es') && tag !== 'esnext'
 	)
 	if (ecmaTag) {
 		ecmaVersion = Number(ecmaTag.substr(2))
@@ -168,8 +168,8 @@ if (hasDep('eslint-plugin-react')) {
 	config.plugins.push('react')
 	Object.assign(config.settings, {
 		react: {
-			version: versions.react
-		}
+			version: versions.react,
+		},
 	})
 } else if (react) {
 	throw new MissingError('eslint-plugin-react')
@@ -179,7 +179,7 @@ if (hasDep('eslint-plugin-react')) {
 if (hasDep('eslint-plugin-react-hooks')) {
 	config.plugins.push('react-hooks')
 	Object.assign(config.rules, {
-		'react-hooks/rules-of-hooks': ERROR
+		'react-hooks/rules-of-hooks': ERROR,
 	})
 } else if (react) {
 	throw new MissingError('eslint-plugin-react-hooks')
@@ -197,9 +197,9 @@ if (hasDep('eslint-plugin-babel')) {
 		'quotes',
 		'semi',
 		'no-unused-expressions',
-		'valid-typeof'
+		'valid-typeof',
 	]
-	replacements.forEach(function(key) {
+	replacements.forEach(function (key) {
 		if (rules.includes(key)) {
 			// config.rules['babel/' + key] = config.rules[key]
 			// ^ won't work with the new replacement setup
@@ -213,7 +213,7 @@ if (hasDep('eslint-plugin-flow-vars')) {
 	config.plugins.push('flow-vars')
 	Object.assign(config.rules, {
 		'flow-vars/define-flow-type': WARN,
-		'flow-vars/use-flow-type': WARN
+		'flow-vars/use-flow-type': WARN,
 	})
 } else if (flowtype) {
 	throw new MissingError('eslint-plugin-flow-vars')

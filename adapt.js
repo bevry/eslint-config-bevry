@@ -251,6 +251,27 @@ if (prettier) {
 	if (react) config.extends.push('prettier/react')
 }
 
+// Plugin: Base UI
+if (hasDep('eslint-plugin-baseui') || hasDep('baseui')) {
+	// Ensure dependencies exist
+	if (hasDep('eslint-plugin-baseui') === false) {
+		throw new MissingError('eslint-plugin-baseui')
+	}
+	if (hasDep('baseui') === false) {
+		throw new MissingError('baseui')
+	}
+
+	// add config
+	config.plugins.push('baseui')
+	Object.assign(config.rules, {
+		'baseui/deprecated-theme-api': WARN,
+		'baseui/deprecated-component-api': WARN,
+		'baseui/no-deep-imports': WARN,
+	})
+} else if (flowtype) {
+	throw new MissingError('eslint-plugin-flow-vars')
+}
+
 // ------------------------------------
 // Export
 

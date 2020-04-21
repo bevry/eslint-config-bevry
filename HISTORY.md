@@ -1,5 +1,9 @@
 # History
 
+## v3.1.0 2020 April 21
+
+-   Added support for [Base UI](https://baseweb.design/getting-started/setup/)
+
 ## v3.0.0 2020 March 26
 
 -   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)

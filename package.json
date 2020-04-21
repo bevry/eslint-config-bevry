@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-bevry",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Bevry's ESLint configuration is an adaptive configuration that automatically configures ESLint.",
   "homepage": "https://github.com/bevry/eslint-config-bevry",
   "license": "MIT",

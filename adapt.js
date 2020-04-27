@@ -60,6 +60,9 @@ Object.keys(deps).forEach((name) => {
 	versions[name] = version
 })
 
+// extract some common items
+const keywords = data.keywords || []
+
 // ------------------------------------
 // Enhancements
 
@@ -124,6 +127,11 @@ config.parserOptions.ecmaFeatures.jsx = jsx
 config.parser = parser
 
 // Set environments depending on whether we need them or not
+config.env.worker =
+	keywords.includes('worker') ||
+	keywords.includes('workers') ||
+	keywords.includes('webworker') ||
+	keywords.includes('webworkers')
 config.env.es6 = Boolean(ecmaVersion >= 6)
 config.env.node = Boolean(data.engines && data.engines.node)
 config.env.browser = Boolean(data.browser)

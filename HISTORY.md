@@ -1,5 +1,9 @@
 # History
 
+## v3.2.0 2020 April 27
+
+-   Set `worker` env if any of these keywords are present: `worker`, `webworker`, `workers`, `webworkers`
+
 ## v3.1.0 2020 April 21
 
 -   Added support for [Base UI](https://baseweb.design/getting-started/setup/)

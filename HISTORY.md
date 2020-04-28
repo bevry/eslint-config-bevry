@@ -1,5 +1,9 @@
 # History
 
+## v3.3.0 2020 April 28
+
+-   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+
 ## v3.2.0 2020 April 27
 
 -   Set `worker` env if any of these keywords are present: `worker`, `webworker`, `workers`, `webworkers`

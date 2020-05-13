@@ -13,12 +13,12 @@ cache: npm
 install:
   - >-
     eval "$(curl -fsSL
-    https://raw.githubusercontent.com/bevry/awesome-travis/c91c9d5eef34ecb0e92029667fd5052640225fa3/scripts/node-install.bash)"
+    https://raw.githubusercontent.com/bevry/awesome-travis/fa96727a807e159cd5d325bb8c7157a27f6a078e/scripts/node-install.bash)"
 before_script:
   - >-
     eval "$(curl -fsSL
-    https://raw.githubusercontent.com/bevry/awesome-travis/c91c9d5eef34ecb0e92029667fd5052640225fa3/scripts/node-verify.bash)"
+    https://raw.githubusercontent.com/bevry/awesome-travis/fa96727a807e159cd5d325bb8c7157a27f6a078e/scripts/node-verify.bash)"
 after_success:
   - >-
     eval "$(curl -fsSL
-    https://raw.githubusercontent.com/bevry/awesome-travis/c91c9d5eef34ecb0e92029667fd5052640225fa3/scripts/node-publish.bash)"
+    https://raw.githubusercontent.com/bevry/awesome-travis/fa96727a807e159cd5d325bb8c7157a27f6a078e/scripts/node-publish.bash)"

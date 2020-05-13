@@ -101,7 +101,7 @@ npx eslint --print-config .
 
 These amazing people are maintaining this project:
 
-<ul><li><a href="http://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/eslint-config-bevry/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/eslint-config-bevry">view contributions</a></li></ul>
+<ul><li><a href="https://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/eslint-config-bevry/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/eslint-config-bevry">view contributions</a></li></ul>
 
 <h3>Sponsors</h3>
 
@@ -121,11 +121,9 @@ No sponsors yet! Will you be the first?
 
 These amazing people have contributed code to this project:
 
-<ul><li><a href="http://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/eslint-config-bevry/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/eslint-config-bevry">view contributions</a></li>
-<li><a href="http://mdm.cc">Michael Duane Mooring</a> — <a href="https://github.com/bevry/eslint-config-bevry/commits?author=mikeumus" title="View the GitHub contributions of Michael Duane Mooring on repository bevry/eslint-config-bevry">view contributions</a></li>
-<li><a href="http://robloach.net">Rob Loach</a> — <a href="https://github.com/bevry/eslint-config-bevry/commits?author=RobLoach" title="View the GitHub contributions of Rob Loach on repository bevry/eslint-config-bevry">view contributions</a></li>
-<li><a href="http://github.com/apps/dependabot">dependabot[bot]</a> — <a href="https://github.com/bevry/eslint-config-bevry/commits?author=dependabot[bot]" title="View the GitHub contributions of dependabot[bot] on repository bevry/eslint-config-bevry">view contributions</a></li>
-<li><a href="http://github.com/apps/dependabot-preview">dependabot-preview[bot]</a> — <a href="https://github.com/bevry/eslint-config-bevry/commits?author=dependabot-preview[bot]" title="View the GitHub contributions of dependabot-preview[bot] on repository bevry/eslint-config-bevry">view contributions</a></li></ul>
+<ul><li><a href="https://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/eslint-config-bevry/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/eslint-config-bevry">view contributions</a></li>
+<li><a href="https://github.com/mikeumus">Michael Duane Mooring</a> — <a href="https://github.com/bevry/eslint-config-bevry/commits?author=mikeumus" title="View the GitHub contributions of Michael Duane Mooring on repository bevry/eslint-config-bevry">view contributions</a></li>
+<li><a href="https://github.com/RobLoach">Rob Loach</a> — <a href="https://github.com/bevry/eslint-config-bevry/commits?author=RobLoach" title="View the GitHub contributions of Rob Loach on repository bevry/eslint-config-bevry">view contributions</a></li></ul>
 
 <a href="https://github.com/bevry/eslint-config-bevry/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
 
@@ -138,7 +136,7 @@ These amazing people have contributed code to this project:
 
 Unless stated otherwise all works are:
 
-<ul><li>Copyright &copy; 2018+ <a href="http://balupton.com">Benjamin Lupton</a></li></ul>
+<ul><li>Copyright &copy; 2018+ <a href="https://balupton.com">Benjamin Lupton</a></li></ul>
 
 and licensed under:
 

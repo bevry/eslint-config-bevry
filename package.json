@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-bevry",
-  "version": "3.14.0",
+  "version": "3.15.0",
   "description": "Bevry's ESLint configuration is an adaptive configuration that automatically configures ESLint.",
   "homepage": "https://github.com/bevry/eslint-config-bevry",
   "license": "MIT",
@@ -92,11 +92,6 @@
   ],
   "type": "commonjs",
   "main": "index.js",
-  "exports": {
-    "node": {
-      "require": "./index.js"
-    }
-  },
   "dependencies": {
     "semver": "^7.3.2"
   },

@@ -161,6 +161,10 @@ if (typescript) {
 	config.rules.strict = IGNORE
 	// typescript has builtin unused detection
 	config.rules['no-unused-vars'] = IGNORE
+	// typescript will detect true errors here better than eslint can
+	config.rules['no-use-before-define'] = IGNORE
+	// incompatible with typescript overloads
+	config.rules['no-redeclare'] = IGNORE
 }
 
 // Plugin: TypeScript

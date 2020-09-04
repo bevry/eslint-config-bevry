@@ -1,5 +1,14 @@
 # History
 
+## v3.22.0 2020 September 4
+
+-   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+
+## v3.21.0 2020 September 4
+
+-   Disable `no-use-before-define` and `no-redeclare` within TypeScript projects, as Typescript handles these better than eslint does
+-   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+
 ## v3.20.0 2020 September 4
 
 -   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)

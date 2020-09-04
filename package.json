@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-bevry",
-  "version": "3.19.0",
+  "version": "3.20.0",
   "description": "Bevry's ESLint configuration is an adaptive configuration that automatically configures ESLint.",
   "homepage": "https://github.com/bevry/eslint-config-bevry",
   "license": "MIT",
@@ -81,6 +81,7 @@
       "directory": ".",
       "entry": "index.js",
       "tags": [
+        "source",
         "javascript",
         "esnext",
         "require"
@@ -96,15 +97,15 @@
     "semver": "^7.3.2"
   },
   "devDependencies": {
-    "@bevry/update-contributors": "^1.15.0",
-    "assert-helpers": "^6.19.0",
-    "eslint": "^7.7.0",
+    "@bevry/update-contributors": "^1.16.0",
+    "assert-helpers": "^7.2.0",
+    "eslint": "^7.8.1",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.4",
-    "kava": "^5.10.0",
-    "prettier": "^2.0.5",
-    "projectz": "^2.14.0",
-    "valid-directory": "^3.0.0"
+    "kava": "^5.11.0",
+    "prettier": "^2.1.1",
+    "projectz": "^2.15.0",
+    "valid-directory": "^3.3.0"
   },
   "scripts": {
     "our:clean": "rm -Rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",

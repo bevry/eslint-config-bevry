@@ -140,7 +140,6 @@
   },
   "boundation": {
     "compileNode": false,
-    "ltsNodeOnly": true,
     "sourceDirectory": "."
   }
 }

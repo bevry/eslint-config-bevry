@@ -7,7 +7,7 @@
 
 <!-- BADGES/ -->
 
-<span class="badge-travisci"><a href="http://travis-ci.com/bevry/eslint-config-bevry" title="Check this project's build status on TravisCI"><img src="https://img.shields.io/travis/com/bevry/eslint-config-bevry/master.svg" alt="Travis CI Build Status" /></a></span>
+<span class="badge-githubworkflow"><a href="https://github.com/bevry/eslint-config-bevry/actions?query=workflow%3Abevry" title="View the status of this project's GitHub Workflow: bevry"><img src="https://github.com/bevry/eslint-config-bevry/workflows/bevry/badge.svg" alt="Status of the GitHub Workflow: bevry" /></a></span>
 <span class="badge-npmversion"><a href="https://npmjs.org/package/eslint-config-bevry" title="View this project on NPM"><img src="https://img.shields.io/npm/v/eslint-config-bevry.svg" alt="NPM version" /></a></span>
 <span class="badge-npmdownloads"><a href="https://npmjs.org/package/eslint-config-bevry" title="View this project on NPM"><img src="https://img.shields.io/npm/dm/eslint-config-bevry.svg" alt="NPM downloads" /></a></span>
 <span class="badge-daviddm"><a href="https://david-dm.org/bevry/eslint-config-bevry" title="View the status of this project's dependencies on DavidDM"><img src="https://img.shields.io/david/bevry/eslint-config-bevry.svg" alt="Dependency Status" /></a></span>

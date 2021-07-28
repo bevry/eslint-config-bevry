@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-bevry",
-  "version": "3.25.0",
+  "version": "3.26.0",
   "description": "Bevry's ESLint configuration is an adaptive configuration that automatically configures ESLint.",
   "homepage": "https://github.com/bevry/eslint-config-bevry",
   "license": "MIT",
@@ -104,7 +104,7 @@
     "eslint-plugin-prettier": "^3.4.0",
     "kava": "^5.14.0",
     "prettier": "^2.3.2",
-    "projectz": "^2.18.0",
+    "projectz": "^2.19.0",
     "valid-directory": "^3.7.0"
   },
   "scripts": {

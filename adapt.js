@@ -254,13 +254,6 @@ if (prettier) {
 
 	// Let the plugin autoconfigure
 	config.extends.push('plugin:prettier/recommended')
-	// config.extends.push('prettier') <-- doesn't autoconfigure the rules
-
-	// Add flowtype
-	if (flowtype) config.extends.push('prettier/flowtype')
-
-	// Add react
-	if (react) config.extends.push('prettier/react')
 }
 
 // Plugin: Base UI

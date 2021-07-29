@@ -1,5 +1,9 @@
 # History
 
+## v3.27.0 2021 July 30
+
+-   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+
 ## v3.26.0 2021 July 29
 
 -   Support [`prettier/eslint-config-prettier` v8](https://github.com/prettier/eslint-config-prettier/blob/aeb4d52de54960ff48a8c627e6c25db9873d7719/CHANGELOG.md#version-800-2021-02-21) which auto-configures itself

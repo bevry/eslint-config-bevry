@@ -7,7 +7,7 @@
 class MissingError extends Error {
 	constructor(dependency) {
 		super(
-			`missing development dependency: ${dependency}\nrun: npm install --save-dev ${dependency}`
+			`missing development dependency: ${dependency}\nrun: npm install --save-dev ${dependency}`,
 		)
 	}
 }
@@ -81,7 +81,7 @@ if (data.editions) {
 	const sourceEdition = data.editions[0]
 	const editionTags = sourceEdition.tags || sourceEdition.syntaxes || []
 	const ecmaTag = editionTags.find(
-		(tag) => tag.startsWith('es') && tag !== 'esnext'
+		(tag) => tag.startsWith('es') && tag !== 'esnext',
 	)
 	if (ecmaTag) {
 		ecmaVersion = Number(ecmaTag.substr(2))

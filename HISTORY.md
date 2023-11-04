@@ -1,5 +1,10 @@
 # History
 
+## v3.29.0 2023 November 4
+
+-   Fixed `ESNext` source edition not setting the correct eslint ECMAScript version
+-   Changed default ECMAScript version from 2019 to the latest ratified version
+
 ## v3.28.0 2023 November 1
 
 -   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)

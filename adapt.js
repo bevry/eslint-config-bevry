@@ -68,7 +68,7 @@ const keywords = data.keywords || []
 
 // Set our defaults
 let parser,
-	ecmaVersion = 2019,
+	ecmaVersion = new Date().getFullYear() - 1,
 	sourceType = 'script',
 	react = hasDep('react'),
 	flowtype = hasDep('flow-bin'),
@@ -80,11 +80,13 @@ let parser,
 if (data.editions) {
 	const sourceEdition = data.editions[0]
 	const editionTags = sourceEdition.tags || sourceEdition.syntaxes || []
-	const ecmaTag = editionTags.find(
-		(tag) => tag.startsWith('es') && tag !== 'esnext',
-	)
+	const ecmaTag =
+		editionTags.find((tag) => tag.startsWith('es') && tag !== 'esnext') ||
+		editionTags.includes('esnext')
+			? `ES${ecmaVersion}`
+			: ''
 	if (ecmaTag) {
-		ecmaVersion = Number(ecmaTag.substr(2))
+		ecmaVersion = Number(ecmaTag.substring(2))
 	}
 	if (editionTags.includes('typescript')) {
 		typescript = true

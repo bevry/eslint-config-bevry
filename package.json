@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-bevry",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "Bevry's ESLint configuration is an adaptive configuration that automatically configures ESLint.",
   "homepage": "https://github.com/bevry/eslint-config-bevry",
   "license": "Artistic-2.0",
@@ -29,18 +29,19 @@
       "githubsponsors",
       "thanksdev",
       "patreon",
-      "flattr",
       "liberapay",
       "buymeacoffee",
       "opencollective",
       "crypto",
       "paypal",
-      "wishlist"
+      "---",
+      "discord",
+      "twitch"
     ],
     "config": {
       "githubWorkflow": "bevry",
       "githubSponsorsUsername": "balupton",
-      "thanksdevGithubUsername": "balupton",
+      "thanksdevGithubUsername": "bevry",
       "buymeacoffeeUsername": "balupton",
       "cryptoURL": "https://bevry.me/crypto",
       "flattrUsername": "balupton",
@@ -49,6 +50,9 @@
       "patreonUsername": "bevry",
       "paypalURL": "https://bevry.me/paypal",
       "wishlistURL": "https://bevry.me/wishlist",
+      "discordServerID": "1147436445783560193",
+      "discordServerInvite": "nQuXddV7VP",
+      "twitchUsername": "balupton",
       "githubUsername": "bevry",
       "githubRepository": "eslint-config-bevry",
       "githubSlug": "bevry/eslint-config-bevry",
@@ -73,7 +77,7 @@
     "url": "https://github.com/bevry/eslint-config-bevry.git"
   },
   "engines": {
-    "node": ">=8"
+    "node": ">=6"
   },
   "editions": [
     {
@@ -87,25 +91,25 @@
         "require"
       ],
       "engines": {
-        "node": "8 || 10 || 12 || 14 || 16 || 18 || 20 || 21"
+        "node": "6 || 8 || 10 || 12 || 14 || 16 || 18 || 20 || 21"
       }
     }
   ],
   "type": "commonjs",
   "main": "index.js",
   "dependencies": {
-    "semver": "^7.5.4"
+    "version-clean": "^1.0.0"
   },
   "devDependencies": {
     "@bevry/update-contributors": "^1.23.0",
-    "assert-helpers": "^11.2.0",
-    "eslint": "^8.53.0",
+    "assert-helpers": "^11.4.0",
+    "eslint": "^8.54.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
-    "kava": "^7.1.0",
+    "kava": "^7.2.0",
     "prettier": "^3.1.0",
-    "projectz": "^2.23.0",
-    "valid-directory": "^4.1.0"
+    "projectz": "^3.2.0",
+    "valid-directory": "^4.4.0"
   },
   "scripts": {
     "our:clean": "rm -rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",

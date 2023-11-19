@@ -38,7 +38,7 @@ function hasDep(name) {
 // Load
 
 // Load data.json file if it exists
-const semver = require('semver')
+const versionClean = require('version-clean').default
 const path = require('path')
 const cwd = process.cwd()
 const rules = Object.keys(config.rules)
@@ -53,10 +53,7 @@ try {
 Object.assign(deps, data.dependencies || {}, data.devDependencies || {})
 Object.keys(deps).forEach((name) => {
 	const range = deps[name]
-	const clean = semver.clean(range)
-	const coerce = semver.coerce(range)
-	const version = clean || (coerce && coerce.version) || null
-	// version will resolve to null in the case that the range is a github reference, instead of a verison range
+	const version = versionClean(range) || null // resolve to null in case of github references
 	versions[name] = version
 })
 

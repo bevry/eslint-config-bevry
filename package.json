@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-bevry",
-  "version": "5.0.0",
+  "version": "5.1.0",
   "description": "Bevry's ESLint configuration is an adaptive configuration that automatically configures ESLint.",
   "homepage": "https://github.com/bevry/eslint-config-bevry",
   "license": "Artistic-2.0",
@@ -98,15 +98,15 @@
   "type": "commonjs",
   "main": "index.js",
   "dependencies": {
-    "version-clean": "^1.0.0"
+    "version-clean": "^1.1.0"
   },
   "devDependencies": {
     "@bevry/update-contributors": "^1.23.0",
-    "assert-helpers": "^11.4.0",
+    "assert-helpers": "^11.5.0",
     "eslint": "^8.54.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-prettier": "^5.0.1",
-    "kava": "^7.2.0",
+    "kava": "^7.3.0",
     "prettier": "^3.1.0",
     "projectz": "^3.2.0",
     "valid-directory": "^4.4.0"

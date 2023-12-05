@@ -7,7 +7,7 @@
 class MissingError extends Error {
 	constructor(dependency) {
 		super(
-			`missing development dependency: ${dependency}\nrun: npm install --save-dev ${dependency}`
+			`missing development dependency: ${dependency}\nrun: npm install --save-dev ${dependency}`,
 		)
 	}
 }

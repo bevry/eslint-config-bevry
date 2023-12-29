@@ -1,17 +1,25 @@
 {
   "name": "eslint-config-bevry",
-  "version": "5.3.0",
+  "version": "5.4.0",
+  "license": "Artistic-2.0",
   "description": "Bevry's ESLint configuration is an adaptive configuration that automatically configures ESLint.",
   "homepage": "https://github.com/bevry/eslint-config-bevry",
-  "license": "Artistic-2.0",
+  "funding": "https://bevry.me/fund",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bevry/eslint-config-bevry.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bevry/eslint-config-bevry/issues"
+  },
   "keywords": [
     "babel",
     "bevry",
     "editions",
+    "es5",
     "eslint",
     "eslint-config",
     "eslintconfig",
-    "esnext",
     "flow",
     "flow-type",
     "flowtype",
@@ -59,35 +67,66 @@
       "npmPackageName": "eslint-config-bevry"
     }
   },
-  "funding": "https://bevry.me/fund",
-  "author": "2018+ Benjamin Lupton <b@lupton.cc> (https://balupton.com)",
+  "author": "Benjamin Lupton <b@lupton.cc> (https://balupton.com) (https://github.com/balupton)",
+  "authors": [
+    "Benjamin Lupton <b@lupton.cc> (https://balupton.com) (https://github.com/balupton): Accelerating collaborative wisdom."
+  ],
   "maintainers": [
-    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)"
+    "Benjamin Lupton <b@lupton.cc> (https://balupton.com) (https://github.com/balupton): Accelerating collaborative wisdom."
   ],
   "contributors": [
-    "Benjamin Lupton <b@lupton.cc> (https://github.com/balupton)",
-    "Michael Duane Mooring (https://github.com/mikeumus)",
-    "Rob Loach <robloach@gmail.com> (https://github.com/RobLoach)"
+    "Benjamin Lupton <b@lupton.cc> (https://balupton.com) (https://github.com/balupton)",
+    "Michael Duane Mooring (https://mdm.cc) (https://github.com/mikeumus) (https://opencollective.com/mikeumus) (https://twitter.com/mikeumus)",
+    "Rob Loach <robloach@gmail.com> (https://robloach.net) (https://github.com/RobLoach)"
   ],
-  "bugs": {
-    "url": "https://github.com/bevry/eslint-config-bevry/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/bevry/eslint-config-bevry.git"
-  },
+  "sponsors": [
+    "Andrew Nesbitt (https://nesbitt.io) (https://github.com/andrew): Software engineer and researcher",
+    "Balsa <hello@balsa.com> (https://balsa.com) (https://github.com/balsa): We're Balsa, and we're building tools for builders.",
+    "Codecov <hello-codecov@sentry.io> (https://codecov.io) (https://github.com/codecov): Empower developers with tools to improve code quality and testing.",
+    "Poonacha Medappa (https://poonachamedappa.com) (https://github.com/km-Poonacha)",
+    "Rob Morris <rob@prismatik.com.au> (https://github.com/Rob-Morris)",
+    "Sentry (https://sentry.io) (https://github.com/getsentry): Real-time crash reporting for your web apps, mobile apps, and games.",
+    "Syntax <scott@syntax.fm> (https://syntax.fm) (https://github.com/syntaxfm): Syntax Podcast"
+  ],
+  "donors": [
+    "Andrew Nesbitt (https://nesbitt.io) (https://github.com/andrew)",
+    "Armen Mkrtchian (https://mogoni.dev) (https://github.com/Armenm)",
+    "Balsa <hello@balsa.com> (https://balsa.com) (https://github.com/balsa)",
+    "Chad (https://opencollective.com/chad8)",
+    "Codecov <hello-codecov@sentry.io> (https://codecov.io) (https://github.com/codecov)",
+    "dr.dimitru (https://veliovgroup.com) (https://github.com/dr-dimitru)",
+    "Elliott Ditman (https://elliottditman.com) (https://github.com/elliottditman)",
+    "entroniq (https://gitlab.com/entroniq) (https://thanks.dev/d/gl/entroniq)",
+    "GitHub (https://github.com/about) (https://github.com/github)",
+    "Hunter Beast (https://cryptoquick.com) (https://github.com/cryptoquick)",
+    "Jean-Luc Geering (https://github.com/jlgeering) (https://opencollective.com/jlgeering) (https://twitter.com/jlgeering)",
+    "Michael Duane Mooring (https://mdm.cc) (https://github.com/mikeumus) (https://opencollective.com/mikeumus) (https://twitter.com/mikeumus)",
+    "Michael Harry Scepaniak <mhs1.sys@gmail.com> (https://michaelscepaniak.com) (https://github.com/hispanic)",
+    "Mohammed Shah <shah@idk.uno> (https://github.com/smashah) (https://thanks.dev/d/gh/smashah) (https://twitter.com/smashah)",
+    "Mr. Henry <hello@mrhenry.be> (https://mrhenry.be) (https://github.com/mrhenry)",
+    "Nermal <nermalcat69@skiff.com> (https://arjunaditya.vercel.app) (https://github.com/nermalcat69)",
+    "Pleo (https://pleo.io) (https://github.com/pleo-io)",
+    "Poonacha Medappa (https://poonachamedappa.com) (https://github.com/km-Poonacha)",
+    "Rob Morris <rob@prismatik.com.au> (https://github.com/Rob-Morris)",
+    "Robert de Forest <guitar.robot@gmail.com> (https://github.com/rdeforest)",
+    "Sentry (https://sentry.io) (https://github.com/getsentry)",
+    "ServieJS (https://github.com/serviejs) (https://thanks.dev/d/gh/serviejs)",
+    "Skunk Team (https://skunk.team) (https://github.com/skunkteam)",
+    "Syntax <scott@syntax.fm> (https://syntax.fm) (https://github.com/syntaxfm)",
+    "WriterJohnBuck (https://github.com/WriterJohnBuck)"
+  ],
   "engines": {
     "node": ">=6"
   },
   "editions": [
     {
-      "description": "ESNext source code for Node.js with Require for modules",
+      "description": "ES5 source code for Node.js 6 || 8 || 10 || 12 || 14 || 16 || 18 || 20 || 21 with Require for modules",
       "directory": ".",
       "entry": "index.js",
       "tags": [
         "source",
         "javascript",
-        "esnext",
+        "es5",
         "require"
       ],
       "engines": {
@@ -98,26 +137,24 @@
   "type": "commonjs",
   "main": "index.js",
   "dependencies": {
-    "version-clean": "^1.6.0"
+    "version-clean": "^1.8.0"
   },
   "devDependencies": {
-    "@bevry/update-contributors": "^1.23.0",
-    "assert-helpers": "^11.9.0",
-    "eslint": "^8.55.0",
+    "assert-helpers": "^11.12.0",
+    "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.0.1",
-    "kava": "^7.5.0",
-    "prettier": "^3.1.0",
-    "projectz": "^3.4.0",
-    "valid-directory": "^4.6.0"
+    "eslint-plugin-prettier": "^5.1.2",
+    "kava": "^7.8.0",
+    "prettier": "^3.1.1",
+    "projectz": "^4.2.0",
+    "valid-directory": "^4.9.0"
   },
   "scripts": {
     "our:clean": "rm -rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
     "our:compile": "printf '%s\n' 'no need for this project'",
     "our:deploy": "printf '%s\n' 'no need for this project'",
-    "our:meta": "npm run our:meta:contributors && npm run our:meta:projectz",
-    "our:meta:contributors": "update-contributors",
-    "our:meta:projectz": "projectz compile",
+    "our:meta": "npm run our:meta:projectz",
+    "our:meta:projectz": "projectz --offline",
     "our:release": "npm run our:release:prepare && npm run our:release:check-changelog && npm run our:release:check-dirty && npm run our:release:tag && npm run our:release:push",
     "our:release:check-changelog": "cat ./HISTORY.md | grep \"v$npm_package_version\" || (printf '%s\n' \"add a changelog entry for v$npm_package_version\" && exit -1)",
     "our:release:check-dirty": "git diff --exit-code",
@@ -127,11 +164,14 @@
     "our:setup": "npm run our:setup:install",
     "our:setup:install": "npm install",
     "our:test": "npm run our:verify && npm test",
-    "our:verify": "npm run our:verify:directory && npm run our:verify:eslint && npm run our:verify:prettier",
-    "our:verify:directory": "valid-directory",
+    "our:verify": "npm run our:verify:eslint && npm run our:verify:prettier",
     "our:verify:eslint": "eslint --fix --ignore-pattern '**/*.d.ts' --ignore-pattern '**/vendor/' --ignore-pattern '**/node_modules/' --ext .mjs,.js,.jsx,.ts,.tsx .",
     "our:verify:prettier": "prettier --write .",
     "test": "node ./test.js"
+  },
+  "boundation": {
+    "compileNode": false,
+    "sourceDirectory": "."
   },
   "eslintConfig": {
     "extends": [
@@ -141,11 +181,7 @@
   "prettier": {
     "semi": false,
     "singleQuote": true,
-    "trailingComma": "all",
+    "trailingComma": "es5",
     "endOfLine": "lf"
-  },
-  "boundation": {
-    "compileNode": false,
-    "sourceDirectory": "."
   }
 }

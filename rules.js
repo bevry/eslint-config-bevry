@@ -15,7 +15,7 @@ const config = {
 
 		// Two spaces after one line if or else:
 		// if ( blah )  return
-		// Insead of one space:
+		// Instead of one space:
 		// if ( blah ) return
 
 		// No spaces on embedded function:
@@ -512,7 +512,7 @@ const config = {
 		],
 		// ^ broken before, let us try again
 
-		// Prefer double qoutes for JSX properties: <a b="c" />, <a b='"' />
+		// Prefer double quotes for JSX properties: <a b="c" />, <a b='"' />
 		'jsx-quotes': [ERROR, 'prefer-double'],
 
 		// Space after the colon
@@ -666,7 +666,7 @@ const config = {
 		// However, eslint isn't that specific, so ignore
 		'operator-linebreak': IGNORE,
 
-		// This rule doesn't appear to work correclty
+		// This rule doesn't appear to work correctly
 		'padded-blocks': IGNORE,
 
 		// Seems like a good idea to error about this

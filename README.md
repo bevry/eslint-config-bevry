@@ -1,9 +1,8 @@
 <!-- TITLE/ -->
 
-<h1>eslint-config-bevry</h1>
+# eslint-config-bevry
 
 <!-- /TITLE -->
-
 
 <!-- BADGES/ -->
 
@@ -77,35 +76,35 @@ npx eslint --print-config .
 
 <!-- HISTORY/ -->
 
-<h2>History</h2>
+## History
 
-<a href="https://github.com/bevry/eslint-config-bevry/blob/master/HISTORY.md#files">Discover the release history by heading on over to the <code>HISTORY.md</code> file.</a>
+[Discover the release history by heading on over to the `HISTORY.md` file.](https://github.com/bevry/eslint-config-bevry/blob/HEAD/HISTORY.md#files)
 
 <!-- /HISTORY -->
 
-
-<!-- CONTRIBUTE/ -->
-
-<h2>Contribute</h2>
-
-<a href="https://github.com/bevry/eslint-config-bevry/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
-
-<!-- /CONTRIBUTE -->
-
-
 <!-- BACKERS/ -->
 
-<h2>Backers</h2>
+## Backers
 
-<h3>Maintainers</h3>
+### Code
 
-These amazing people are maintaining this project:
+[Discover how to contribute via the `CONTRIBUTING.md` file.](https://github.com/bevry/eslint-config-bevry/blob/HEAD/CONTRIBUTING.md#files)
 
-<ul><li><a href="https://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/eslint-config-bevry/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/eslint-config-bevry">view contributions</a></li></ul>
+#### Authors
 
-<h3>Sponsors</h3>
+-   [Benjamin Lupton](https://balupton.com) — Accelerating collaborative wisdom.
 
-No sponsors yet! Will you be the first?
+#### Maintainers
+
+-   [Benjamin Lupton](https://balupton.com) — Accelerating collaborative wisdom.
+
+#### Contributors
+
+-   [Benjamin Lupton](https://github.com/balupton) — [view contributions](https://github.com/bevry/eslint-config-bevry/commits?author=balupton "View the GitHub contributions of Benjamin Lupton on repository bevry/eslint-config-bevry")
+-   [Michael Duane Mooring](https://github.com/mikeumus) — [view contributions](https://github.com/bevry/eslint-config-bevry/commits?author=mikeumus "View the GitHub contributions of Michael Duane Mooring on repository bevry/eslint-config-bevry")
+-   [Rob Loach](https://github.com/RobLoach) — [view contributions](https://github.com/bevry/eslint-config-bevry/commits?author=RobLoach "View the GitHub contributions of Rob Loach on repository bevry/eslint-config-bevry")
+
+### Finances
 
 <span class="badge-githubsponsors"><a href="https://github.com/sponsors/balupton" title="Donate to this project using GitHub Sponsors"><img src="https://img.shields.io/badge/github-donate-yellow.svg" alt="GitHub Sponsors donate button" /></a></span>
 <span class="badge-thanksdev"><a href="https://thanks.dev/u/gh/bevry" title="Donate to this project using ThanksDev"><img src="https://img.shields.io/badge/thanksdev-donate-yellow.svg" alt="ThanksDev donate button" /></a></span>
@@ -116,29 +115,56 @@ No sponsors yet! Will you be the first?
 <span class="badge-crypto"><a href="https://bevry.me/crypto" title="Donate to this project using Cryptocurrency"><img src="https://img.shields.io/badge/crypto-donate-yellow.svg" alt="crypto donate button" /></a></span>
 <span class="badge-paypal"><a href="https://bevry.me/paypal" title="Donate to this project using Paypal"><img src="https://img.shields.io/badge/paypal-donate-yellow.svg" alt="PayPal donate button" /></a></span>
 
-<h3>Contributors</h3>
+#### Sponsors
 
-These amazing people have contributed code to this project:
+-   [Andrew Nesbitt](https://nesbitt.io) — Software engineer and researcher
+-   [Balsa](https://balsa.com) — We're Balsa, and we're building tools for builders.
+-   [Codecov](https://codecov.io) — Empower developers with tools to improve code quality and testing.
+-   [Poonacha Medappa](https://poonachamedappa.com)
+-   [Rob Morris](https://github.com/Rob-Morris)
+-   [Sentry](https://sentry.io) — Real-time crash reporting for your web apps, mobile apps, and games.
+-   [Syntax](https://syntax.fm) — Syntax Podcast
 
-<ul><li><a href="https://balupton.com">Benjamin Lupton</a> — <a href="https://github.com/bevry/eslint-config-bevry/commits?author=balupton" title="View the GitHub contributions of Benjamin Lupton on repository bevry/eslint-config-bevry">view contributions</a></li>
-<li><a href="https://github.com/mikeumus">Michael Duane Mooring</a> — <a href="https://github.com/bevry/eslint-config-bevry/commits?author=mikeumus" title="View the GitHub contributions of Michael Duane Mooring on repository bevry/eslint-config-bevry">view contributions</a></li>
-<li><a href="https://github.com/RobLoach">Rob Loach</a> — <a href="https://github.com/bevry/eslint-config-bevry/commits?author=RobLoach" title="View the GitHub contributions of Rob Loach on repository bevry/eslint-config-bevry">view contributions</a></li></ul>
+#### Donors
 
-<a href="https://github.com/bevry/eslint-config-bevry/blob/master/CONTRIBUTING.md#files">Discover how you can contribute by heading on over to the <code>CONTRIBUTING.md</code> file.</a>
+-   [Andrew Nesbitt](https://nesbitt.io)
+-   [Armen Mkrtchian](https://mogoni.dev)
+-   [Balsa](https://balsa.com)
+-   [Chad](https://opencollective.com/chad8)
+-   [Codecov](https://codecov.io)
+-   [dr.dimitru](https://veliovgroup.com)
+-   [Elliott Ditman](https://elliottditman.com)
+-   [entroniq](https://gitlab.com/entroniq)
+-   [GitHub](https://github.com/about)
+-   [Hunter Beast](https://cryptoquick.com)
+-   [Jean-Luc Geering](https://github.com/jlgeering)
+-   [Michael Duane Mooring](https://mdm.cc)
+-   [Michael Harry Scepaniak](https://michaelscepaniak.com)
+-   [Mohammed Shah](https://github.com/smashah)
+-   [Mr. Henry](https://mrhenry.be)
+-   [Nermal](https://arjunaditya.vercel.app)
+-   [Pleo](https://pleo.io)
+-   [Poonacha Medappa](https://poonachamedappa.com)
+-   [Rob Morris](https://github.com/Rob-Morris)
+-   [Robert de Forest](https://github.com/rdeforest)
+-   [Sentry](https://sentry.io)
+-   [ServieJS](https://github.com/serviejs)
+-   [Skunk Team](https://skunk.team)
+-   [Syntax](https://syntax.fm)
+-   [WriterJohnBuck](https://github.com/WriterJohnBuck)
 
 <!-- /BACKERS -->
 
-
 <!-- LICENSE/ -->
 
-<h2>License</h2>
+## License
 
 Unless stated otherwise all works are:
 
-<ul><li>Copyright &copy; 2018+ <a href="https://balupton.com">Benjamin Lupton</a></li></ul>
+-   Copyright &copy; [Benjamin Lupton](https://balupton.com)
 
 and licensed under:
 
-<ul><li><a href="http://spdx.org/licenses/Artistic-2.0.html">Artistic License 2.0</a></li></ul>
+-   [Artistic License 2.0](http://spdx.org/licenses/Artistic-2.0.html)
 
 <!-- /LICENSE -->

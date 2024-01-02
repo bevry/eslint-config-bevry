@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-bevry",
-  "version": "5.4.0",
+  "version": "5.5.0",
   "license": "Artistic-2.0",
   "description": "Bevry's ESLint configuration is an adaptive configuration that automatically configures ESLint.",
   "homepage": "https://github.com/bevry/eslint-config-bevry",

@@ -12,7 +12,6 @@
 <br class="badge-separator" />
 <span class="badge-githubsponsors"><a href="https://github.com/sponsors/balupton" title="Donate to this project using GitHub Sponsors"><img src="https://img.shields.io/badge/github-donate-yellow.svg" alt="GitHub Sponsors donate button" /></a></span>
 <span class="badge-thanksdev"><a href="https://thanks.dev/u/gh/bevry" title="Donate to this project using ThanksDev"><img src="https://img.shields.io/badge/thanksdev-donate-yellow.svg" alt="ThanksDev donate button" /></a></span>
-<span class="badge-patreon"><a href="https://patreon.com/bevry" title="Donate to this project using Patreon"><img src="https://img.shields.io/badge/patreon-donate-yellow.svg" alt="Patreon donate button" /></a></span>
 <span class="badge-liberapay"><a href="https://liberapay.com/bevry" title="Donate to this project using Liberapay"><img src="https://img.shields.io/badge/liberapay-donate-yellow.svg" alt="Liberapay donate button" /></a></span>
 <span class="badge-buymeacoffee"><a href="https://buymeacoffee.com/balupton" title="Donate to this project using Buy Me A Coffee"><img src="https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg" alt="Buy Me A Coffee donate button" /></a></span>
 <span class="badge-opencollective"><a href="https://opencollective.com/bevry" title="Donate to this project using Open Collective"><img src="https://img.shields.io/badge/open%20collective-donate-yellow.svg" alt="Open Collective donate button" /></a></span>
@@ -25,54 +24,171 @@
 <!-- /BADGES -->
 
 
-Bevry's ESLint configuration is an adaptive configuration that automatically configures ESLint based on the following:
+Bevry's ESLint configuration is an intelligent, self-configuring system that automatically analyzes your project and adapts ESLint configuration accordingly. It performs comprehensive project analysis to detect your development environment and applies the optimal ESLint setup.
 
--   If you are using [Editions](https://editions.bevry.me), then make use of the information it provides
--   If you are using Modules (import/export), then configure ESLint for it
--   If you are using a ES5 or below, then configure ESLint for it
-    -   Disables incompatible rules that require ES6+
--   If you are using JSX, then configure ESLint for it
--   If you are using React, then configure ESLint for it
-    -   Enables the plugin `eslint-plugin-react` and configures it with its recommended rules and the react version you are using
-    -   Enables the plugin `eslint-plugin-react-hooks` and configures it with its recommended rules
--   If you are using TypeScript, then configure ESLint for it
-    -   Enables the plugin `eslint-plugin-typescript`
-    -   Configures the parser as `typescript-eslint-parser`
-    -   Disables incompatible rules that require JavaScript
--   If you are using `eslint-plugin-babel`, then configure ESLint for it
-    -   Enables the plugin, and automatically configures the rule replacements
--   If you are using `babel-eslint`, then configure ESLint for it
--   If you are using Prettier, the configure ESLint for it
-    -   Enables the configuration `eslint-config-prettier`
-    -   Enables the plugin `eslint-plugin-prettier` and configures it with its recommended rules
-    -   Enables the other prettier configurations automatically based on feature/language usage
+**🚀 For the ultimate zero-configuration experience**: Use [**Boundation**](https://github.com/bevry/boundation) - Bevry's automatic scaffolding and upgrading tool. When your project is scaffolded and managed by Boundation, nearly everything (including ESLint, TypeScript, testing, documentation, CI/CD, and more) is automatically configured and maintained using Bevry's battle-tested best practices. Simply run `npx boundation` in your project directory for complete project setup and ongoing maintenance.
 
-To make use of it, you must first install it as a development dependency:
+## 🔍 **Intelligent Project Analysis**
+
+- **[Boundation](https://github.com/bevry/boundation) Ecosystem** _(optional)_: Complete automation via interactive Q&A system. When using Boundation, virtually all project metadata (editions, dependencies, keywords, browser fields, TypeScript/Babel/React setup, etc.) is automatically injected and managed, eliminating the need for manual configuration of the elements below.
+- **[Editions](https://editions.bevry.me) Integration** _(optional)_: When present, analyzes your `package.json` editions to extract syntax, module system, and target environment information
+- **Dependency Detection**: Scans `dependencies` and `devDependencies` to automatically enable relevant plugins and configurations
+- **Package.json Analysis**: Examines `keywords`, `browser` field, and other metadata to determine your project's target environment
+- **ECMAScript Version Intelligence**: Dynamically detects and configures for your specific ECMAScript target (ES5, ES2015, ES2017, ES2020, ES2021+)
+    - Automatically disables incompatible rules for older targets
+    - Configures appropriate globals and language features
+    - Adjusts rule severity based on target capabilities
+
+## ⚙️ **Adaptive Configuration**
+
+- **Module System Detection**: Automatically configures for ES modules or CommonJS based on your project structure
+    - Enables [`eslint-plugin-import`](https://github.com/import-js/eslint-plugin-import) with appropriate module validation
+    - Configures TypeScript-aware import rules when applicable
+- **Environment-Specific Setup**: Intelligently configures globals and rules for detected environments:
+    - **Node.js**: Configures [`eslint-plugin-n`](https://github.com/eslint-community/eslint-plugin-n) with module-aware or script-aware settings
+    - **Browser**: Applies browser globals and environment-specific rules
+    - **Web Workers**: Configures worker and service worker globals
+- **Framework Integration**: Automatically detects and configures framework-specific linting:
+    - **React**: Enables [`eslint-plugin-react`](https://github.com/jsx-eslint/eslint-plugin-react) with auto-detected React version and [`eslint-plugin-react-hooks`](https://github.com/facebook/react/tree/main/packages/eslint-plugin-react-hooks)
+    - **JSX**: Configures JSX parsing and JSX-runtime rules when detected
+- **Language Support**: Comprehensive language tooling integration:
+    - **TypeScript**: Uses [`typescript-eslint`](https://typescript-eslint.io/) with strict configuration, disables conflicting JavaScript rules
+    - **Babel**: Integrates [`@babel/eslint-parser`](https://babeljs.io/docs/babel-eslint-parser) and [`@babel/eslint-plugin`](https://babeljs.io/docs/babel-eslint-plugin) when detected
+- **Documentation Standards**: Automatic JSDoc validation with [`eslint-plugin-jsdoc`](https://github.com/gajus/eslint-plugin-jsdoc), TypeScript-aware when applicable
+- **Code Formatting**: Seamless Prettier integration via [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier) (following ESLint v9 best practices)
+
+## 📋 **Comprehensive Rule Set**
+
+The configuration includes **180+ carefully curated ESLint rules** with comprehensive documentation links, organized into:
+
+- **Possible Errors**: Critical error prevention and runtime safety
+- **Best Practices**: Code quality and maintainability standards
+- **Variables**: Scope and declaration management
+- **Node.js/CommonJS**: Server-side JavaScript best practices
+- **ECMAScript 6+**: Modern JavaScript features and patterns
+- **Stylistic**: Code consistency (delegated to Prettier in ESLint v9+)
+
+All rules automatically adapt based on your detected environment, target ECMAScript version, and enabled features.
+
+## ✨ **Benefits**
+
+- **🚀 Zero Configuration**: Works out-of-the-box with intelligent project detection
+- **📦 Dependency-Free**: No need to install or manage individual ESLint plugins
+- **🔧 Self-Maintaining**: Configuration updates automatically with your project changes
+- **⚡ Performance Optimized**: Only loads and configures plugins you actually need
+- **🛡️ Battle-Tested**: Used across Bevry's ecosystem of [200+](https://github.com/bevry/eslint-config-bevry/network/dependents) open source projects
+
+## Usage
+
+Use [boundation](https://github.com/bevry/boundation) to automate installation and maintenance, making the rest of this usage section unnecessary.
+
+Otherwise, to proceed and maintain manually, first install it and ESLint:
 
 ```bash
-npm install --save-dev eslint-config-bevry
+npm install --save-dev eslint eslint-config-bevry
 ```
 
-Then for full automatic usage, the only ESLint configuration you will need is to add the following to your `package.json` file:
+> **💡 Zero Plugin Management**: With `eslint-config-bevry`, there's no need to manually install or configure any ESLint plugins (`eslint-plugin-react`, `typescript-eslint`, `eslint-plugin-import`, etc.). The configuration automatically includes and configures all necessary plugins based on your project's detected features, saving you from dependency management complexity.
+
+Then add `eslint.config.js` file to your project root:
+
+```javascript
+import { defineConfig } from 'eslint/config'
+import eslintBevry from 'eslint-config-bevry'
+export default defineConfig(eslintBevry)
+```
+
+### Advanced Configuration
+
+`eslint-config-bevry` supports customization through your `package.json` or programmatically:
+
+#### Default Files and Ignores
+
+**Default Files**: When no `files` are specified, eslint-config-bevry automatically includes:
+
+- If [Editions](https://editions.bevry.me) are detected: `{sourceEdition.directory}/**/*.{js,cjs,mjs,jsx,mjsx,ts,cts,mts,tsx,mtsx}`
+- Otherwise: `**/*.{js,cjs,mjs,jsx,mjsx,ts,cts,mts,tsx,mtsx}`
+
+**Default Ignores**: Always includes these patterns (your custom ignores are appended):
+
+- `**/*.d.ts` - TypeScript declaration files
+- `**/vendor/` - Third-party vendor directories
+- `**/node_modules/` - Node.js dependencies
+
+#### Customization Options
+
+**Via package.json:**
 
 ```json
 {
     "eslintConfig": {
-        "extends": ["bevry"]
+        "files": [
+            // Replaces the configuration from `eslint-config-bevry`
+            "source/**/*.{js,ts}"
+        ],
+        "ignores": [
+            // Appends to the configuration from `eslint-config-bevry`
+            "dist/",
+            "*.config.js"
+        ],
+        "rules": {
+            // Overrides the configuration from `eslint-config-bevry`
+            "no-console": "off"
+        }
     }
 }
 ```
 
-If you would like more control, rather than extending `bevry` directly, you can extend the individual parts instead:
+**Programmatic customization:**
 
--   `bevry/rules` contains the rules for our coding standard, you can use or not use this to your liking
--   `bevry/adapt` contains the adaptive configuration, this should be the last extension you apply
+```javascript
+import { defineConfig } from 'eslint/config'
+import eslintBevry from 'eslint-config-bevry'
+export default defineConfig({
+    extends: [eslintBevry],
+    files: [
+        // Replaces the configuration from `eslint-config-bevry`
+        'source/**/*.{js,ts}',
+    ],
+    ignores: [
+        // Appends to the configuration from `eslint-config-bevry`
+        'dist/',
+        '*.config.js',
+    ],
+    rules: {
+        // Overrides the configuration from `eslint-config-bevry`
+        'no-console': 'off',
+    },
+})
+```
 
-To ensure it is working, compare the results of the following command with what you would expect:
+### Running ESLint
+
+Use ESLint as normal:
 
 ```bash
-npx eslint --print-config .
+npx eslint --fix
 ```
+
+### Debugging and Inspection
+
+To see, inspect, and debug the resultant configuration:
+
+```bash
+npx eslint --inspect-config
+```
+
+To validate your configuration is working correctly:
+
+```bash
+# Check specific files
+npx eslint source/index.js --max-warnings 0
+
+# See what files ESLint will process
+npx eslint --dry-run
+```
+
+**🔍 Troubleshooting**: If you encounter unexpected behavior, the configuration adapts based on your `package.json` dependencies and metadata. Check that your project's `dependencies`, `devDependencies`, `keywords`, and `editions` accurately reflect your project setup.
 
 <!-- HISTORY/ -->
 
@@ -108,7 +224,6 @@ npx eslint --print-config .
 
 <span class="badge-githubsponsors"><a href="https://github.com/sponsors/balupton" title="Donate to this project using GitHub Sponsors"><img src="https://img.shields.io/badge/github-donate-yellow.svg" alt="GitHub Sponsors donate button" /></a></span>
 <span class="badge-thanksdev"><a href="https://thanks.dev/u/gh/bevry" title="Donate to this project using ThanksDev"><img src="https://img.shields.io/badge/thanksdev-donate-yellow.svg" alt="ThanksDev donate button" /></a></span>
-<span class="badge-patreon"><a href="https://patreon.com/bevry" title="Donate to this project using Patreon"><img src="https://img.shields.io/badge/patreon-donate-yellow.svg" alt="Patreon donate button" /></a></span>
 <span class="badge-liberapay"><a href="https://liberapay.com/bevry" title="Donate to this project using Liberapay"><img src="https://img.shields.io/badge/liberapay-donate-yellow.svg" alt="Liberapay donate button" /></a></span>
 <span class="badge-buymeacoffee"><a href="https://buymeacoffee.com/balupton" title="Donate to this project using Buy Me A Coffee"><img src="https://img.shields.io/badge/buy%20me%20a%20coffee-donate-yellow.svg" alt="Buy Me A Coffee donate button" /></a></span>
 <span class="badge-opencollective"><a href="https://opencollective.com/bevry" title="Donate to this project using Open Collective"><img src="https://img.shields.io/badge/open%20collective-donate-yellow.svg" alt="Open Collective donate button" /></a></span>
@@ -117,39 +232,46 @@ npx eslint --print-config .
 
 #### Sponsors
 
--   [Andrew Nesbitt](https://nesbitt.io) — Software engineer and researcher
--   [Balsa](https://balsa.com) — We're Balsa, and we're building tools for builders.
--   [Codecov](https://codecov.io) — Empower developers with tools to improve code quality and testing.
+-   [Andrew Nesbitt](https://nesbitt.io) — Working on mapping the world of open source software @ecosyste-ms  and empowering developers with @octobox
+-   [Divinci ™](https://divinci.ai) — A more comfortable AI conversation experience, with friends! 🤖🖤
+-   [Mr. Henry](https://mrhenry.be)
 -   [Poonacha Medappa](https://poonachamedappa.com)
--   [Rob Morris](https://github.com/Rob-Morris)
--   [Sentry](https://sentry.io) — Real-time crash reporting for your web apps, mobile apps, and games.
--   [Syntax](https://syntax.fm) — Syntax Podcast
+-   [Roboflow](https://roboflow.com)
+-   [Square](https://github.com/square)
 
 #### Donors
 
 -   [Andrew Nesbitt](https://nesbitt.io)
+-   [Ángel González](https://univunix.com)
+-   [Arjun Aditya](https://arjunaditya.xyz)
 -   [Armen Mkrtchian](https://mogoni.dev)
 -   [Balsa](https://balsa.com)
+-   [Canonical](https://canonical.com)
 -   [Chad](https://opencollective.com/chad8)
 -   [Codecov](https://codecov.io)
+-   [Divinci ™](https://divinci.ai)
 -   [dr.dimitru](https://veliovgroup.com)
 -   [Elliott Ditman](https://elliottditman.com)
 -   [entroniq](https://gitlab.com/entroniq)
+-   [Frontend Masters](https://FrontendMasters.com)
 -   [GitHub](https://github.com/about)
 -   [Hunter Beast](https://cryptoquick.com)
 -   [Jean-Luc Geering](https://github.com/jlgeering)
--   [Michael Duane Mooring](https://mdm.cc)
+-   [Lee Driscoll](https://leedriscoll.me)
+-   [Michael Duane Mooring](https://divinci.app)
 -   [Michael Harry Scepaniak](https://michaelscepaniak.com)
 -   [Mohammed Shah](https://github.com/smashah)
 -   [Mr. Henry](https://mrhenry.be)
--   [Nermal](https://arjunaditya.vercel.app)
 -   [Pleo](https://pleo.io)
 -   [Poonacha Medappa](https://poonachamedappa.com)
--   [Rob Morris](https://github.com/Rob-Morris)
 -   [Robert de Forest](https://github.com/rdeforest)
+-   [Rob Morris](https://linktr.ee/recipromancer)
+-   [Roboflow](https://roboflow.com)
+-   [Scott Kempson](https://github.com/scokem)
 -   [Sentry](https://sentry.io)
 -   [ServieJS](https://github.com/serviejs)
 -   [Skunk Team](https://skunk.team)
+-   [Square](https://github.com/square)
 -   [Syntax](https://syntax.fm)
 -   [WriterJohnBuck](https://github.com/WriterJohnBuck)
 

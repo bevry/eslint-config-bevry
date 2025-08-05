@@ -1,8 +1,8 @@
 {
   "name": "eslint-config-bevry",
-  "version": "5.5.0",
+  "version": "6.0.0",
   "license": "Artistic-2.0",
-  "description": "Bevry's ESLint configuration is an adaptive configuration that automatically configures ESLint.",
+  "description": "Intelligent, self-configuring ESLint configuration that automatically analyzes your project structure, dependencies, and metadata to apply optimal linting rules for JavaScript, TypeScript, React, Node.js, and more.",
   "homepage": "https://github.com/bevry/eslint-config-bevry",
   "funding": "https://bevry.me/fund",
   "repository": {
@@ -20,6 +20,7 @@
     "eslint",
     "eslint-config",
     "eslintconfig",
+    "export-default",
     "flow",
     "flow-type",
     "flowtype",
@@ -36,7 +37,6 @@
       "---",
       "githubsponsors",
       "thanksdev",
-      "patreon",
       "liberapay",
       "buymeacoffee",
       "opencollective",
@@ -50,14 +50,11 @@
       "githubWorkflow": "bevry",
       "githubSponsorsUsername": "balupton",
       "thanksdevGithubUsername": "bevry",
-      "buymeacoffeeUsername": "balupton",
-      "cryptoURL": "https://bevry.me/crypto",
-      "flattrUsername": "balupton",
       "liberapayUsername": "bevry",
+      "buymeacoffeeUsername": "balupton",
       "opencollectiveUsername": "bevry",
-      "patreonUsername": "bevry",
+      "cryptoURL": "https://bevry.me/crypto",
       "paypalURL": "https://bevry.me/paypal",
-      "wishlistURL": "https://bevry.me/wishlist",
       "discordServerID": "1147436445783560193",
       "discordServerInvite": "nQuXddV7VP",
       "twitchUsername": "balupton",
@@ -76,78 +73,104 @@
   ],
   "contributors": [
     "Benjamin Lupton <b@lupton.cc> (https://balupton.com) (https://github.com/balupton)",
-    "Michael Duane Mooring (https://mdm.cc) (https://github.com/mikeumus) (https://opencollective.com/mikeumus) (https://twitter.com/mikeumus)",
-    "Rob Loach <robloach@gmail.com> (https://robloach.net) (https://github.com/RobLoach)"
+    "Michael Duane Mooring (https://divinci.app) (https://github.com/mikeumus) (https://opencollective.com/mikeumus) (https://twitter.com/mikeumus)",
+    "Rob Loach (https://robloach.net) (https://github.com/RobLoach)"
   ],
   "sponsors": [
-    "Andrew Nesbitt (https://nesbitt.io) (https://github.com/andrew): Software engineer and researcher",
-    "Balsa <hello@balsa.com> (https://balsa.com) (https://github.com/balsa): We're Balsa, and we're building tools for builders.",
-    "Codecov <hello-codecov@sentry.io> (https://codecov.io) (https://github.com/codecov): Empower developers with tools to improve code quality and testing.",
+    "Andrew Nesbitt <andrewnez@gmail.com> (https://nesbitt.io) (https://github.com/andrew): Working on mapping the world of open source software @ecosyste-ms  and empowering developers with @octobox",
+    "Divinci ™ <hi@divinci.ai> (https://divinci.ai) (https://github.com/Divinci-AI): A more comfortable AI conversation experience, with friends! 🤖🖤",
+    "Mr. Henry <hello@mrhenry.be> (https://mrhenry.be) (https://github.com/mrhenry)",
     "Poonacha Medappa (https://poonachamedappa.com) (https://github.com/km-Poonacha)",
-    "Rob Morris <rob@prismatik.com.au> (https://github.com/Rob-Morris)",
-    "Sentry (https://sentry.io) (https://github.com/getsentry): Real-time crash reporting for your web apps, mobile apps, and games.",
-    "Syntax <scott@syntax.fm> (https://syntax.fm) (https://github.com/syntaxfm): Syntax Podcast"
+    "Roboflow <hello@roboflow.com> (https://roboflow.com) (https://github.com/roboflow)",
+    "Square (https://github.com/square) (https://thanks.dev/d/gh/square)"
   ],
   "donors": [
-    "Andrew Nesbitt (https://nesbitt.io) (https://github.com/andrew)",
-    "Armen Mkrtchian (https://mogoni.dev) (https://github.com/Armenm)",
+    "Andrew Nesbitt <andrewnez@gmail.com> (https://nesbitt.io) (https://github.com/andrew)",
+    "Ángel González <aglezabad@gmail.com> (https://univunix.com) (https://github.com/Aglezabad) (https://twitter.com/Aglezabad)",
+    "Arjun Aditya <nermalcat69@skiff.com> (https://arjunaditya.xyz) (https://github.com/nermalcat69)",
+    "Armen Mkrtchian <armen.mkrtchian@gmail.com> (https://mogoni.dev) (https://github.com/Armenm) (https://twitter.com/armen_mkrtchian)",
     "Balsa <hello@balsa.com> (https://balsa.com) (https://github.com/balsa)",
+    "Canonical (https://canonical.com) (https://github.com/canonical) (https://thanks.dev/d/gh/canonical)",
     "Chad (https://opencollective.com/chad8)",
     "Codecov <hello-codecov@sentry.io> (https://codecov.io) (https://github.com/codecov)",
+    "Divinci ™ <hi@divinci.ai> (https://divinci.ai) (https://github.com/Divinci-AI)",
     "dr.dimitru (https://veliovgroup.com) (https://github.com/dr-dimitru)",
-    "Elliott Ditman (https://elliottditman.com) (https://github.com/elliottditman)",
+    "Elliott Ditman <elliottditman@gmail.com> (https://elliottditman.com) (https://github.com/elliottditman) (https://patreon.com/user?u=15026448)",
     "entroniq (https://gitlab.com/entroniq) (https://thanks.dev/d/gl/entroniq)",
+    "Frontend Masters <support@frontendmasters.com> (https://FrontendMasters.com) (https://github.com/FrontendMasters) (https://thanks.dev/d/gh/FrontendMasters)",
     "GitHub (https://github.com/about) (https://github.com/github)",
     "Hunter Beast (https://cryptoquick.com) (https://github.com/cryptoquick)",
     "Jean-Luc Geering (https://github.com/jlgeering) (https://opencollective.com/jlgeering) (https://twitter.com/jlgeering)",
-    "Michael Duane Mooring (https://mdm.cc) (https://github.com/mikeumus) (https://opencollective.com/mikeumus) (https://twitter.com/mikeumus)",
+    "Lee Driscoll <lsdriscoll@icloud.com> (https://leedriscoll.me) (https://github.com/leedriscoll) (https://patreon.com/user?u=5292556)",
+    "Michael Duane Mooring (https://divinci.app) (https://github.com/mikeumus) (https://opencollective.com/mikeumus) (https://twitter.com/mikeumus)",
     "Michael Harry Scepaniak <mhs1.sys@gmail.com> (https://michaelscepaniak.com) (https://github.com/hispanic)",
     "Mohammed Shah <shah@idk.uno> (https://github.com/smashah) (https://thanks.dev/d/gh/smashah) (https://twitter.com/smashah)",
     "Mr. Henry <hello@mrhenry.be> (https://mrhenry.be) (https://github.com/mrhenry)",
-    "Nermal <nermalcat69@skiff.com> (https://arjunaditya.vercel.app) (https://github.com/nermalcat69)",
     "Pleo (https://pleo.io) (https://github.com/pleo-io)",
     "Poonacha Medappa (https://poonachamedappa.com) (https://github.com/km-Poonacha)",
-    "Rob Morris <rob@prismatik.com.au> (https://github.com/Rob-Morris)",
     "Robert de Forest <guitar.robot@gmail.com> (https://github.com/rdeforest)",
-    "Sentry (https://sentry.io) (https://github.com/getsentry)",
+    "Rob Morris <rob@prismatik.com.au> (https://linktr.ee/recipromancer) (https://github.com/Rob-Morris)",
+    "Roboflow <hello@roboflow.com> (https://roboflow.com) (https://github.com/roboflow)",
+    "Scott Kempson <scottkempson@gmail.com> (https://github.com/scokem) (https://twitter.com/scokem)",
+    "Sentry <support@sentry.io> (https://sentry.io) (https://github.com/getsentry)",
     "ServieJS (https://github.com/serviejs) (https://thanks.dev/d/gh/serviejs)",
     "Skunk Team (https://skunk.team) (https://github.com/skunkteam)",
+    "Square (https://github.com/square) (https://thanks.dev/d/gh/square)",
     "Syntax <scott@syntax.fm> (https://syntax.fm) (https://github.com/syntaxfm)",
     "WriterJohnBuck (https://github.com/WriterJohnBuck)"
   ],
   "engines": {
-    "node": ">=6"
+    "node": ">=20"
   },
   "editions": [
     {
-      "description": "ES5 source code for Node.js 6 || 8 || 10 || 12 || 14 || 16 || 18 || 20 || 21 with Require for modules",
-      "directory": ".",
+      "description": "ES5 source code for Node.js 20 || 22 || 24 with Import for modules",
+      "directory": "source",
       "entry": "index.js",
       "tags": [
         "source",
         "javascript",
         "es5",
-        "require"
+        "import"
       ],
       "engines": {
-        "node": "6 || 8 || 10 || 12 || 14 || 16 || 18 || 20 || 21"
+        "node": "20 || 22 || 24"
       }
     }
   ],
-  "type": "commonjs",
-  "main": "index.js",
+  "type": "module",
+  "main": "source/index.js",
+  "exports": {
+    "node": {
+      "import": "./source/index.js"
+    }
+  },
   "dependencies": {
-    "version-clean": "^1.8.0"
+    "@babel/eslint-parser": "^7.28.0",
+    "@babel/eslint-plugin": "^7.27.1",
+    "@bevry/json": "^2.4.0",
+    "@eslint/js": "^9.32.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-jsdoc": "^52.0.2",
+    "eslint-plugin-n": "^17.21.3",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "filedirname": "^3.4.0",
+    "typescript-eslint": "^8.39.0",
+    "version-clean": "^1.9.0"
   },
   "devDependencies": {
     "assert-helpers": "^11.12.0",
-    "eslint": "^8.56.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.1.2",
-    "kava": "^7.8.0",
-    "prettier": "^3.1.1",
+    "eslint": "^9.32.0",
+    "kava": "^7.9.0",
+    "prettier": "^3.6.2",
     "projectz": "^4.2.0",
+    "safeps": "^11.6.0",
     "valid-directory": "^4.9.0"
+  },
+  "peerDependencies": {
+    "eslint": ">=9.0.0"
   },
   "scripts": {
     "our:clean": "rm -rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
@@ -165,18 +188,15 @@
     "our:setup:install": "npm install",
     "our:test": "npm run our:verify && npm test",
     "our:verify": "npm run our:verify:eslint && npm run our:verify:prettier",
-    "our:verify:eslint": "eslint --fix --ignore-pattern '**/*.d.ts' --ignore-pattern '**/vendor/' --ignore-pattern '**/node_modules/' --ext .mjs,.js,.jsx,.ts,.tsx .",
+    "our:verify:eslint": "eslint --fix",
     "our:verify:prettier": "prettier --write .",
-    "test": "node ./test.js"
+    "test": "npm run our:verify:eslint"
   },
   "boundation": {
-    "compileNode": false,
-    "sourceDirectory": "."
-  },
-  "eslintConfig": {
-    "extends": [
-      "./local.js"
-    ]
+    "maintainedNodeVersions": true,
+    "expandNodeVersions": false,
+    "shrinkNodeVersions": true,
+    "compileNode": false
   },
   "prettier": {
     "semi": false,

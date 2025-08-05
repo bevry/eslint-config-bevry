@@ -1,225 +1,247 @@
 # History
 
+## v6.0.0 2025 August 6
+
+- [Refer to to the README for new usage instructions.](https://github.com/bevry/eslint-config-bevry)
+- **BREAKING:** Updated for ESLint v9, breaks compatibility with older ESLint versions
+    - ESLint plugins and configs are now inlined - remove them from your `devDependencies` - you just need `npm install --save-dev eslint eslint-config-bevry`
+    - File patterns and ignore patterns are now built-in - no manual configuration needed - you just need `npx eslint --fix`
+    - Updated Node.js version requirement from `>=6` to `>=20` to align with current LTS versions and ecosystem requirements
+    - Removed FlowType support as its conventions do not seem to be fully upgraded yet for ESLint v9
+    - Disabled ESLint v9 deprecated stylistic rules as they have been dropped in for Prettier formatting
+- **Documentation improvements:**
+    - Added comprehensive documentation links for all 180+ ESLint rules with validated URLs
+    - Reorganized all rule sections alphabetically for better maintainability
+    - Enhanced README with intelligent project analysis and Boundation ecosystem integration details
+    - Added documentation for default file patterns and ignore filters
+    - Updated package description to reflect the intelligent, adaptive configuration system
+- **Internal modernization:**
+    - Migrated from CommonJS to ES modules (`"type": "module"` in package.json)
+    - Restructured project with source files in `source/` directory
+    - Updated test infrastructure for modern ES module integration
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Thank you to the sponsors: [Andrew Nesbitt](https://nesbitt.io), [Divinci](https://divinci.ai), [Mr. Henry](https://mrhenry.be), [Poonacha Medappa](https://poonachamedappa.com), [Roboflow](https://roboflow.com), [Square](https://github.com/square)
+
 ## v5.5.0 2024 January 2
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
--   Thank you to the sponsors: [Andrew Nesbitt](https://nesbitt.io), [Balsa](https://balsa.com), [Codecov](https://codecov.io), [Poonacha Medappa](https://poonachamedappa.com), [Rob Morris](https://github.com/Rob-Morris), [Sentry](https://sentry.io), [Syntax](https://syntax.fm)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Thank you to the sponsors: [Andrew Nesbitt](https://nesbitt.io), [Balsa](https://balsa.com), [Codecov](https://codecov.io), [Poonacha Medappa](https://poonachamedappa.com), [Rob Morris](https://github.com/Rob-Morris), [Sentry](https://sentry.io), [Syntax](https://syntax.fm)
 
 ## v5.4.0 2023 December 30
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
--   Thank you to the sponsors: [Andrew Nesbitt](https://nesbitt.io), [Balsa](https://balsa.com), [Codecov](https://codecov.io), [Poonacha Medappa](https://poonachamedappa.com), [Rob Morris](https://github.com/Rob-Morris), [Sentry](https://sentry.io), [Syntax](https://syntax.fm)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Thank you to the sponsors: [Andrew Nesbitt](https://nesbitt.io), [Balsa](https://balsa.com), [Codecov](https://codecov.io), [Poonacha Medappa](https://poonachamedappa.com), [Rob Morris](https://github.com/Rob-Morris), [Sentry](https://sentry.io), [Syntax](https://syntax.fm)
 
 ## v5.3.0 2023 December 6
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v5.2.0 2023 November 24
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v5.1.0 2023 November 21
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v5.0.0 2023 November 19
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
--   Minimum required Node.js version changed from `node: >=8` to `node: >=6` adapting to ecosystem changes
--   Drop `semver` dependency for [version-clean](https://github.com/bevry/version-clean) which is lightweight and with better ecosystem support
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Minimum required Node.js version changed from `node: >=8` to `node: >=6` adapting to ecosystem changes
+- Drop `semver` dependency for [version-clean](https://github.com/bevry/version-clean) which is lightweight and with better ecosystem support
 
 ## v4.0.0 2023 November 14
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
--   Minimum required Node.js version changed from `node: >=10` to `node: >=8` adapting to ecosystem changes
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Minimum required Node.js version changed from `node: >=10` to `node: >=8` adapting to ecosystem changes
 
 ## v3.29.0 2023 November 4
 
--   Fixed `ESNext` source edition not setting the correct eslint ECMAScript version
--   Changed default ECMAScript version from 2019 to the latest ratified version
+- Fixed `ESNext` source edition not setting the correct eslint ECMAScript version
+- Changed default ECMAScript version from 2019 to the latest ratified version
 
 ## v3.28.0 2023 November 1
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
--   Updated license from [`MIT`](http://spdx.org/licenses/MIT.html) to [`Artistic-2.0`](http://spdx.org/licenses/Artistic-2.0.html)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated license from [`MIT`](http://spdx.org/licenses/MIT.html) to [`Artistic-2.0`](http://spdx.org/licenses/Artistic-2.0.html)
 
 ## v3.27.0 2021 July 30
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v3.26.0 2021 July 29
 
--   Support [`prettier/eslint-config-prettier` v8](https://github.com/prettier/eslint-config-prettier/blob/aeb4d52de54960ff48a8c627e6c25db9873d7719/CHANGELOG.md#version-800-2021-02-21) which auto-configures itself
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Support [`prettier/eslint-config-prettier` v8](https://github.com/prettier/eslint-config-prettier/blob/aeb4d52de54960ff48a8c627e6c25db9873d7719/CHANGELOG.md#version-800-2021-02-21) which auto-configures itself
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v3.25.0 2021 July 29
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v3.24.0 2021 July 28
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v3.23.0 2020 October 29
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v3.22.0 2020 September 4
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v3.21.0 2020 September 4
 
--   Disable `no-use-before-define` and `no-redeclare` within TypeScript projects, as Typescript handles these better than eslint does
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Disable `no-use-before-define` and `no-redeclare` within TypeScript projects, as Typescript handles these better than eslint does
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v3.20.0 2020 September 4
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v3.19.0 2020 August 18
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v3.18.0 2020 August 4
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v3.17.0 2020 July 22
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v3.16.0 2020 July 22
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v3.15.0 2020 July 21
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v3.14.0 2020 July 21
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v3.13.0 2020 June 25
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v3.12.0 2020 June 21
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v3.11.0 2020 June 21
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v3.10.0 2020 June 20
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v3.9.0 2020 June 10
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v3.8.0 2020 June 10
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v3.7.0 2020 May 22
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v3.6.0 2020 May 21
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v3.5.0 2020 May 13
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v3.4.0 2020 May 4
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v3.3.0 2020 April 28
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v3.2.0 2020 April 27
 
--   Set `worker` env if any of these keywords are present: `worker`, `webworker`, `workers`, `webworkers`
+- Set `worker` env if any of these keywords are present: `worker`, `webworker`, `workers`, `webworkers`
 
 ## v3.1.0 2020 April 21
 
--   Added support for [Base UI](https://baseweb.design/getting-started/setup/)
+- Added support for [Base UI](https://baseweb.design/getting-started/setup/)
 
 ## v3.0.0 2020 March 26
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
--   Minimum required node version changed from `node: >=8` to `node: >=10` to keep up with mandatory ecosystem changes
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Minimum required node version changed from `node: >=8` to `node: >=10` to keep up with mandatory ecosystem changes
 
 ## v2.3.0 2019 December 9
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v2.2.0 2019 December 1
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v2.1.0 2019 December 1
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v2.0.0 2019 December 1
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
--   Minimum required node version changed from `node: >=6` to `node: >=8` to keep up with mandatory ecosystem changes
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Minimum required node version changed from `node: >=6` to `node: >=8` to keep up with mandatory ecosystem changes
 
 ## v1.3.0 2019 November 18
 
--   Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 
 ## v1.2.1 2019 May 13
 
--   Change engines to be `>=6`
--   Update dependencies
+- Change engines to be `>=6`
+- Update dependencies
 
 ## v1.2.0 2019 January 26
 
--   Swap out support for the deprecated typescript eslint packages with the new packages that they recommend
-    -   `typescript-eslint-parser` to `@typescript-eslint/parser`
-    -   `eslint-plugin-typescript` to `@typescript-eslint/eslint-plugin`
+- Swap out support for the deprecated typescript eslint packages with the new packages that they recommend
+    - `typescript-eslint-parser` to `@typescript-eslint/parser`
+    - `eslint-plugin-typescript` to `@typescript-eslint/eslint-plugin`
 
 ## v1.1.2 2019 January 2
 
--   Fixed dependencies that are github references preventing dependency detection from functioning correctly
+- Fixed dependencies that are github references preventing dependency detection from functioning correctly
 
 ## v1.1.1 2019 January 1
 
--   Fixed `Parsing error: Invalid ecmaVersion` by defaulting `ecmaVersion` to `2019` instead of the dynamic next year, which is now `2020`
+- Fixed `Parsing error: Invalid ecmaVersion` by defaulting `ecmaVersion` to `2019` instead of the dynamic next year, which is now `2020`
 
 ## v1.1.0 2018 December 31
 
 Adapter changes:
 
--   TypeScript source type is no longer enforced to `module`, it is now detected based on the edition tags
--   Better detection of React and FlowType projects
--   Add support for React Hooks
--   Set the needed React plugin version configuration, based on the react version from your dependencies
+- TypeScript source type is no longer enforced to `module`, it is now detected based on the edition tags
+- Better detection of React and FlowType projects
+- Add support for React Hooks
+- Set the needed React plugin version configuration, based on the react version from your dependencies
 
 Rule changes:
 
--   Change `spaced-comment` rule to support TypeScript `///` directives
+- Change `spaced-comment` rule to support TypeScript `///` directives
 
 ## v1.0.2 2018 November 22
 
--   Included file extension in `package.json:main`
+- Included file extension in `package.json:main`
 
 ## v1.0.1 2018 November 22
 
--   Updated description
+- Updated description
 
 ## v1.0.0 2018 November 22
 
--   Abstracted out from [bevry/base](https://github.com/bevry/base)
--   Added prettier integration
+- Abstracted out from [bevry/base](https://github.com/bevry/base)
+- Added prettier integration

@@ -41,6 +41,7 @@ Bevry's ESLint configuration is an intelligent, self-configuring system that aut
 
 ## ⚙️ **Adaptive Configuration**
 
+- **ESLint Foundation**: Extends ESLint's recommended configuration from [`@eslint/js`](https://www.npmjs.com/package/@eslint/js) as the baseline for all linting rules.
 - **Module System Detection**: Automatically configures for ES modules or CommonJS based on your project structure
     - Enables [`eslint-plugin-import`](https://github.com/import-js/eslint-plugin-import) with appropriate module validation
     - Configures TypeScript-aware import rules when applicable
@@ -55,18 +56,18 @@ Bevry's ESLint configuration is an intelligent, self-configuring system that aut
     - **TypeScript**: Uses [`typescript-eslint`](https://typescript-eslint.io/) with strict configuration, disables conflicting JavaScript rules
     - **Babel**: Integrates [`@babel/eslint-parser`](https://babeljs.io/docs/babel-eslint-parser) and [`@babel/eslint-plugin`](https://babeljs.io/docs/babel-eslint-plugin) when detected
 - **Documentation Standards**: Automatic JSDoc validation with [`eslint-plugin-jsdoc`](https://github.com/gajus/eslint-plugin-jsdoc), TypeScript-aware when applicable
-- **Code Formatting**: Seamless Prettier integration via [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier) (following ESLint v9 best practices)
+- **Code Formatting**: Intelligent Prettier integration via [`eslint-config-prettier`](https://github.com/prettier/eslint-config-prettier) with comprehensive stylistic rule management:
+    - **Prettier-Compatible Rules**: Special rules that can coexist with Prettier (marked as `specialRule` rather than disabled)
+    - **Legacy Stylistic Rules**: Non-Prettier rules managed by ESLint Stylistic for comprehensive code consistency
+    - **Smart Conflict Resolution**: Automatic detection and resolution of formatting conflicts between ESLint and Prettier
 
 ## 📋 **Comprehensive Rule Set**
 
-The configuration includes **180+ carefully curated ESLint rules** with comprehensive documentation links, organized into:
+The configuration includes **120+ carefully curated ESLint rules** designed to enforce best practices and coding conventions battle-tested by Bevry across 200+ packages and 20 years of JavaScript development.
 
-- **Possible Errors**: Critical error prevention and runtime safety
-- **Best Practices**: Code quality and maintainability standards
-- **Variables**: Scope and declaration management
-- **Node.js/CommonJS**: Server-side JavaScript best practices
-- **ECMAScript 6+**: Modern JavaScript features and patterns
-- **Stylistic**: Code consistency (delegated to Prettier in ESLint v9+)
+**Zero-Conflict Architecture**: Takes great care to ensure zero conflicts between custom rules and plugin configurations. Each rule override is intentional and documented, preventing configurations from inadvertently disabling important plugin-provided rules.
+
+**Battle-Tested Standards**: These conventions have evolved through maintaining hundreds of open source projects, from simple utilities to complex applications, ensuring they work reliably across diverse JavaScript environments and use cases.
 
 All rules automatically adapt based on your detected environment, target ECMAScript version, and enabled features.
 

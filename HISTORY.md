@@ -1,5 +1,12 @@
 # History
 
+## v6.1.0 2025 August 8
+
+- Include recommended rules from `@eslint/js`
+- Reorganised our own rule set to avoid conflicts with the plugin recommended configurations
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Thank you to the sponsors: [Andrew Nesbitt](https://nesbitt.io), [Divinci](https://divinci.ai), [Mr. Henry](https://mrhenry.be), [Poonacha Medappa](https://poonachamedappa.com), [Roboflow](https://roboflow.com), [Square](https://github.com/square)
+
 ## v6.0.0 2025 August 6
 
 - [Refer to to the README for new usage instructions.](https://github.com/bevry/eslint-config-bevry)

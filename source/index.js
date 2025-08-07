@@ -1331,6 +1331,11 @@ if (sourceType === 'module') {
 	}
 	if (typescript) {
 		config.extends.push(eslintImport.flatConfigs.typescript)
+		Object.assign(config.rules, {
+			// https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-unresolved.md
+			// This result is broken for TypeScript projects, as in TypeScript you do `import thing from file.js` instead of `file.ts`, as it is about the resultant file, not the source file; TypeScript handles this correctly, however this rule does not
+			'import/no-unresolved': IGNORE,
+		})
 	}
 }
 
@@ -1371,6 +1376,13 @@ if (node) {
 		// Sometimes sync methods are useful, so warn but don't error
 		'n/no-sync': WARN,
 	})
+	if (typescript || babel) {
+		Object.assign(config.rules, {
+			//https://github.com/eslint-community/eslint-plugin-n/blob/master/docs/rules//no-unsupported-features/es-syntax.md
+			// This rule conflicts with boundation's use of editions compile targets, which allows different compile targets to target different Node.js versions, thus adapting the ecmascript syntax accordingly to the version, and if not able to successfully, then handling that accordingly
+			'n/no-unsupported-features/es-syntax': IGNORE,
+		})
+	}
 }
 if (browser) {
 	config.languageOptions.globals = {

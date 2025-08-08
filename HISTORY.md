@@ -1,5 +1,10 @@
 # History
 
+## v6.1.2 2025 August 8
+
+- Fix ignores not being respected by extended configurations, as such, use `globalIgnores` internally instead of `ignores`
+- Thank you to the sponsors: [Andrew Nesbitt](https://nesbitt.io), [Divinci](https://divinci.ai), [Mr. Henry](https://mrhenry.be), [Poonacha Medappa](https://poonachamedappa.com), [Roboflow](https://roboflow.com), [Square](https://github.com/square)
+
 ## v6.1.1 2025 August 8
 
 - Fix boundation, typescript, and babel conflicts with `n/no-unsupported-features/es-syntax` and `import/no-unresolved`

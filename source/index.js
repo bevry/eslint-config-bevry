@@ -1,5 +1,5 @@
 // ESLint Core
-// import { defineConfig } from "eslint/config";
+import { globalIgnores } from 'eslint/config' // eslint-disable-line
 import globals from 'globals' // eslint-disable-line
 
 // ESLint Plugins
@@ -53,13 +53,17 @@ const config = {
 	name: bevryPackage.name,
 	// version: bevryPackage.version,
 	files: pkg.eslintConfig?.files || [],
-	ignores: [
-		'**/*.d.ts',
-		'**/vendor/',
-		'**/node_modules/',
-		...(pkg.eslintConfig?.ignores || []),
+	// don't use ignores, as it doesn't help us with matched patterns from extended configurations, instead use globalIgnores
+	extends: [
+		globalIgnores([
+			// '**/*.d.ts', <-- now that we fixed the rules that conflict with typescript with v6.1.1, ignoring these isn't necessary anymore
+			'**/vendor/',
+			'**/node_modules/',
+			'**/edition-*/',
+			...(pkg.eslintConfig?.ignores || []),
+		]),
+		eslintJS.configs.recommended,
 	],
-	extends: [eslintJS.configs.recommended],
 	languageOptions: {
 		// ecmaVersion: null,
 		// sourceType: null,

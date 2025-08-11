@@ -71,6 +71,12 @@ The configuration includes **120+ carefully curated ESLint rules** designed to e
 
 All rules automatically adapt based on your detected environment, target ECMAScript version, and enabled features.
 
+For your `test.ts` you probably want to add the following:
+
+```typescript
+/* eslint-disable @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-function-type, @typescript-eslint/no-empty-object-type, @typescript-eslint/no-unsafe-argument -- we are writing tests, we have to test type-unsafe inputs */
+```
+
 ## ✨ **Benefits**
 
 - **🚀 Zero Configuration**: Works out-of-the-box with intelligent project detection

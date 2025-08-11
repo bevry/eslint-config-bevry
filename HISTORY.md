@@ -1,5 +1,11 @@
 # History
 
+## v6.1.3 2025 August 8
+
+- ECMAScript version handling is now more robust, handling both target and source ecmascript versions
+- Our rule customisations are now extensions themselves injected at the appropriate time to better avoid conflicts and redundancies with other plugin rules
+- Thank you to the sponsors: [Andrew Nesbitt](https://nesbitt.io), [Divinci ™](https://divinci.ai), [Mr. Henry](https://mrhenry.be), [Poonacha Medappa](https://poonachamedappa.com), [Roboflow](https://roboflow.com), [Square](https://github.com/square)
+
 ## v6.1.2 2025 August 8
 
 - Fix ignores not being respected by extended configurations, as such, use `globalIgnores` internally instead of `ignores`

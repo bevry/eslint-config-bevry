@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-bevry",
-  "version": "6.1.2",
+  "version": "6.1.3",
   "license": "Artistic-2.0",
   "description": "Intelligent, self-configuring ESLint configuration that automatically analyzes your project structure, dependencies, and metadata to apply optimal linting rules for JavaScript, TypeScript, React, Node.js, and more.",
   "homepage": "https://github.com/bevry/eslint-config-bevry",
@@ -16,16 +16,14 @@
     "babel",
     "bevry",
     "editions",
-    "es5",
     "eslint",
     "eslint-config",
     "eslintconfig",
-    "esnext",
     "export-default",
     "flow",
     "flow-type",
     "flowtype",
-    "jsx",
+    "javascript",
     "lint",
     "node",
     "prettier",
@@ -126,13 +124,13 @@
   },
   "editions": [
     {
-      "description": "ES5 source code for Node.js 20 || 22 || 24 with Import for modules",
+      "description": "javascript source code for Node.js 20 || 22 || 24 with Import for modules",
       "directory": "source",
       "entry": "index.js",
       "tags": [
         "source",
         "javascript",
-        "es5",
+        "esnext",
         "import"
       ],
       "engines": {
@@ -150,21 +148,22 @@
   "dependencies": {
     "@babel/eslint-parser": "^7.28.0",
     "@babel/eslint-plugin": "^7.27.1",
+    "@bevry/ecmascript-versions": "^4.8.0",
     "@bevry/json": "^2.4.0",
-    "@eslint/js": "^9.32.0",
+    "@eslint/js": "^9.33.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-jsdoc": "^52.0.4",
+    "eslint-plugin-jsdoc": "^53.0.0",
     "eslint-plugin-n": "^17.21.3",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
     "filedirname": "^3.4.0",
-    "typescript-eslint": "^8.39.0",
-    "version-clean": "^1.9.0"
+    "typescript-eslint": "^8.39.1",
+    "version-clean": "^1.10.0"
   },
   "devDependencies": {
-    "assert-helpers": "^11.12.0",
-    "eslint": "^9.32.0",
+    "assert-helpers": "^11.13.0",
+    "eslint": "^9.33.0",
     "kava": "^7.9.0",
     "prettier": "^3.6.2",
     "projectz": "^4.2.0",
@@ -172,7 +171,7 @@
     "valid-directory": "^4.9.0"
   },
   "peerDependencies": {
-    "eslint": ">=9.0.0"
+    "eslint": "^9.33.0"
   },
   "scripts": {
     "our:clean": "rm -rf ./docs ./edition* ./es2015 ./es5 ./out ./.next",
@@ -203,7 +202,7 @@
   "prettier": {
     "semi": false,
     "singleQuote": true,
-    "trailingComma": "es5",
+    "trailingComma": "all",
     "endOfLine": "lf"
   }
 }

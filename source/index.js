@@ -197,6 +197,8 @@ const prettier = Boolean(pkg.prettier) || hasDep('prettier'),
 		keywords.includes('webworker') ||
 		keywords.includes('webworkers')
 
+// @todo to support `n/no-unsupported-features/es-syntax` (which crazily uses Node.js version instead of ecmaVersion) need to use @bevry/nodejs-versions to compare all Node.js versions against the range... or, go through each edition with node.js engines and split on || and get the highest value
+
 /**
  * Ensure the ecmascript version is coerced to an eslint valid ecmascript version
  * @param version
@@ -340,6 +342,9 @@ if (node) {
 		...globals.nodeBuiltin,
 	}
 	config.extends.push(rules.afterNodeRecommended)
+	if (typescript || babel) {
+		config.extends.push(rules.afterNodeCompiledRecommended)
+	}
 }
 if (browser) {
 	config.languageOptions.globals = {

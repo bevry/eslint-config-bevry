@@ -1,5 +1,11 @@
 # History
 
+## v6.1.4 2025 August 8
+
+- Disable potentially useful but broken `n/no-unsupported-features/es-syntax` rule, as it does not respect the `ecmaVersion` setting, and instead prefers to use the Node.js engine version, which is not what we want when using a transpiler, and is disrespectful as our configuration knows better, hence why there is even an `ecmaVersion` setting in the first place, they should rename this rule to `n/no-unsupported-features/node-syntax` as that it what it actually is
+    - In a future version, we could use [editions](https://editions.bevry.me) to get the highest compatible Node.js version, and configure it for that, as a workaround for this silly behaviour
+- Thank you to the sponsors: [Andrew Nesbitt](https://nesbitt.io), [Divinci ™](https://divinci.ai), [Mr. Henry](https://mrhenry.be), [Poonacha Medappa](https://poonachamedappa.com), [Roboflow](https://roboflow.com), [Square](https://github.com/square)
+
 ## v6.1.3 2025 August 8
 
 - ECMAScript version handling is now more robust, handling both target and source ecmascript versions

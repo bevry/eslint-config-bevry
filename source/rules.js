@@ -1145,14 +1145,14 @@ export const afterNodeRecommended = {
 	},
 }
 
-// The below is disabled, as boundation now asks the user which ecmascript version their source code should be written in
-// If we are compiling via something that downlevels then disable the rule that checks for ecmascript compatibility
-// if (typescript || babel) {
-// 	Object.assign(config.rules, {
-// 		//https://github.com/eslint-community/eslint-plugin-n/blob/master/docs/rules//no-unsupported-features/es-syntax.md
-// 		'n/no-unsupported-features/es-syntax': IGNORE,
-// 	})
-// }
+export const afterNodeCompiledRecommended = {
+	name: 'eslint-config-bevry/after-node-compiled-recommended',
+	rules: {
+		//https://github.com/eslint-community/eslint-plugin-n/blob/master/docs/rules//no-unsupported-features/es-syntax.md
+		// This rule is broken. It uses the node.js engine version instead of the specified ecmaVersion, and as we use a transpiler the Node.js engine version is expanded beyond the capabilities of our source. There is no configuration to get this rule to actually use the specificied ecmaVersion for the ecmascript syntax - this rule as such should be renamed to node-syntax, NOT es-syntax.
+		'n/no-unsupported-features/es-syntax': IGNORE,
+	},
+}
 
 export const afterTypescriptRecommended = {
 	name: 'eslint-config-bevry/after-typescript-recommended',

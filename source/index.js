@@ -60,9 +60,9 @@ const config = {
 			'**/edition-*/',
 			...(pkg.eslintConfig?.ignores || []),
 		]),
-		rules.beforeEslintRecommended,
+		rules.jsBefore,
 		eslintJS.configs.recommended,
-		rules.afterEslintRecommended,
+		rules.jsAfter,
 	],
 	languageOptions: {
 		// ecmaVersion: null,
@@ -315,10 +315,7 @@ if (sourceType === 'module') {
 	if (react) {
 		config.extends.push(eslintImport.flatConfigs.react)
 	}
-	config.extends.push(
-		eslintImport.flatConfigs.typescript,
-		rules.afterImportRecommended,
-	)
+	config.extends.push(eslintImport.flatConfigs.typescript, rules.importAfter)
 }
 
 // node
@@ -341,9 +338,9 @@ if (node) {
 		...globals.node,
 		...globals.nodeBuiltin,
 	}
-	config.extends.push(rules.afterNodeRecommended)
+	config.extends.push(rules.nodeAfter)
 	if (typescript || babel) {
-		config.extends.push(rules.afterNodeCompiledRecommended)
+		config.extends.push(rules.nodeCompiled)
 	}
 }
 if (browser) {
@@ -392,10 +389,13 @@ if (typescript) {
 		eslintTypescript.configs.stylisticTypeChecked,
 
 		// our overrides
-		rules.afterTypescriptRecommended,
+		rules.typescriptAfter,
 	)
+	if (ecmascriptVersionTarget <= 5) {
+		config.extends.push(rules.typescriptEs5)
+	}
 	if (ecmascriptVersionTarget <= 2015) {
-		config.extends.push(rules.typescriptEcmascript2015Target)
+		config.extends.push(rules.typescriptEs2015)
 	}
 	config.extends.push(rules.typescriptTests)
 } else {
@@ -418,7 +418,7 @@ if (prettier) {
 
 // this is after typescript, as we need to override defaults from typescript configs
 if (ecmascriptVersionSource <= 5) {
-	config.extends.push(rules.ecmascript5Source)
+	config.extends.push(rules.es5)
 }
 
 // user rules overrides

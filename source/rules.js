@@ -7,8 +7,8 @@ export const MAX_PARAMS = 4
 // Rules intended to be overwrote by ESLint Recommended
 // https://unpkg.com/@eslint/js@9/src/configs/eslint-recommended.js
 
-export const beforeEslintRecommended = {
-	name: 'eslint-config-bevry/before-eslint-recommended',
+export const jsBefore = {
+	name: 'eslint-config-bevry/js/before',
 	rules: {
 		// https://eslint.org/docs/latest/rules/constructor-super
 		// eslint/recommended will override this to error
@@ -200,8 +200,8 @@ export const beforeEslintRecommended = {
 // Rules intended to overwrite ESLint Recommended
 // https://unpkg.com/@eslint/js@9/src/configs/eslint-recommended.js
 
-export const afterEslintRecommended = {
-	name: 'eslint-config-bevry/rules-after-eslint-recommended',
+export const jsAfter = {
+	name: 'eslint-config-bevry/js/after',
 	rules: {
 		// https://eslint.org/docs/latest/rules/no-cond-assign
 		// eslint/recommended defaulted this to allow sometimes
@@ -1071,8 +1071,8 @@ export const afterEslintRecommended = {
 // Adjustments
 
 // These are adjustments based on the source ecmascript version, as the transpiler handles them
-export const ecmascript5Source = {
-	name: 'eslint-config-bevry/eslint-five',
+export const es5 = {
+	name: 'eslint-config-bevry/es5',
 	rules: {
 		'no-var': IGNORE,
 		'object-shorthand': [ERROR, 'never'],
@@ -1082,8 +1082,8 @@ export const ecmascript5Source = {
 	},
 }
 
-export const afterImportRecommended = {
-	name: 'eslint-config-bevry/after-import-recommended',
+export const importAfter = {
+	name: 'eslint-config-bevry/import/after',
 	rules: {
 		// https://github.com/import-js/eslint-plugin-import/blob/main/docs/rules/no-unresolved.md
 		// This is broken for javascript and typescript projects, including this project on `typescript-eslint` and `eslint-plugin-jsdoc`
@@ -1095,8 +1095,8 @@ export const afterImportRecommended = {
 // https://github.com/eslint-community/eslint-plugin-n?tab=readme-ov-file#-rules
 // https://github.com/eslint-community/eslint-plugin-n/blob/master/lib/all-rules.js
 // None of these should be set by the recommended configs
-export const afterNodeRecommended = {
-	name: 'eslint-config-bevry/after-node-recommended',
+export const nodeAfter = {
+	name: 'eslint-config-bevry/node/after',
 	rules: {
 		// https://eslint.org/docs/latest/rules/callback-return
 		// https://github.com/eslint-community/eslint-plugin-n/blob/master/docs/rules/callback-return.md
@@ -1145,8 +1145,8 @@ export const afterNodeRecommended = {
 	},
 }
 
-export const afterNodeCompiledRecommended = {
-	name: 'eslint-config-bevry/after-node-compiled-recommended',
+export const nodeCompiled = {
+	name: 'eslint-config-bevry/node/compiled',
 	rules: {
 		//https://github.com/eslint-community/eslint-plugin-n/blob/master/docs/rules//no-unsupported-features/es-syntax.md
 		// This rule is broken. It uses the node.js engine version instead of the specified ecmaVersion, and as we use a transpiler the Node.js engine version is expanded beyond the capabilities of our source. There is no configuration to get this rule to actually use the specificied ecmaVersion for the ecmascript syntax - this rule as such should be renamed to node-syntax, NOT es-syntax.
@@ -1154,8 +1154,8 @@ export const afterNodeCompiledRecommended = {
 	},
 }
 
-export const afterTypescriptRecommended = {
-	name: 'eslint-config-bevry/after-typescript-recommended',
+export const typescriptAfter = {
+	name: 'eslint-config-bevry/typescript/after',
 	rules: {
 		// this typescript-eslint does not modify, however typescript handles them better
 		'no-use-before-define': IGNORE,
@@ -1185,10 +1185,15 @@ export const afterTypescriptRecommended = {
 	},
 }
 
-// @todo these may not be needed now that we are more aware of our ecmascript versions
 // These are adjustments based on the target ecmascript version, as the transpiler does not handle them
-export const typescriptEcmascript2015Target = {
-	name: 'eslint-config-bevry/typescript-ecmascript-2015-overrides',
+export const typescriptEs5 = {
+	name: 'eslint-config-bevry/typescript/es5',
+	rules: {
+		'@typescript-eslint/prefer-for-of': IGNORE, // came in ES2015
+	},
+}
+export const typescriptEs2015 = {
+	name: 'eslint-config-bevry/typescript/es2015',
 	rules: {
 		'@typescript-eslint/prefer-includes': IGNORE, // came in ES2016
 	},
@@ -1196,7 +1201,7 @@ export const typescriptEcmascript2015Target = {
 
 // allow unsafe types in our test files, as how else are we meant to test that unsafe inputs will be handled correctly?
 export const typescriptTests = {
-	name: 'eslint-config-bevry/typescript-test-overrides',
+	name: 'eslint-config-bevry/typescript/tests',
 	files: ['**/test.{js,cjs,mjs,jsx,mjsx,ts,cts,mts,tsx,mtsx}'],
 	rules: {
 		'@typescript-eslint/no-explicit-any': WARN,

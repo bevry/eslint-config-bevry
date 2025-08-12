@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-bevry",
-  "version": "6.1.4",
+  "version": "6.1.5",
   "license": "Artistic-2.0",
   "description": "Intelligent, self-configuring ESLint configuration that automatically analyzes your project structure, dependencies, and metadata to apply optimal linting rules for JavaScript, TypeScript, React, Node.js, and more.",
   "homepage": "https://github.com/bevry/eslint-config-bevry",
@@ -19,6 +19,7 @@
     "eslint",
     "eslint-config",
     "eslintconfig",
+    "esnext",
     "export-default",
     "flow",
     "flow-type",
@@ -120,7 +121,8 @@
     "WriterJohnBuck (https://github.com/WriterJohnBuck)"
   ],
   "engines": {
-    "node": ">=20"
+    "node": ">=20",
+    "ecmascript": ">= esnext"
   },
   "editions": [
     {
@@ -153,7 +155,7 @@
     "@eslint/js": "^9.33.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
-    "eslint-plugin-jsdoc": "^53.0.0",
+    "eslint-plugin-jsdoc": "^53.0.1",
     "eslint-plugin-n": "^17.21.3",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",

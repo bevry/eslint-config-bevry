@@ -1,19 +1,27 @@
 # History
 
-## v6.1.5 2025 August 8
+## v6.1.6 2025 August 13
+
+- Disable `n/no-unpublished-import` completely, as it is broken in general, not just in TypeScript environments
+- Fix loading of your `tsconfig` files
+- Fix loading of your `package.json` eslint configuration
+- Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
+- Thank you to the sponsors: [Andrew Nesbitt](https://nesbitt.io), [Divinci ™](https://divinci.ai), [Mr. Henry](https://mrhenry.be), [Poonacha Medappa](https://poonachamedappa.com), [Roboflow](https://roboflow.com), [Square](https://github.com/square)
+
+## v6.1.5 2025 August 12
 
 - Renamed the rule extensions for brevity and clarity
 - Add `eslint-config-bevry/typescript/es5` configuration for TypeScript ES5 targets, which ignores the `@typescript-eslint/prefer-for-of` rule, as it is not supported in ES5
 - Updated dependencies, [base files](https://github.com/bevry/base), and [editions](https://editions.bevry.me) using [boundation](https://github.com/bevry/boundation)
 - Thank you to the sponsors: [Andrew Nesbitt](https://nesbitt.io), [Divinci ™](https://divinci.ai), [Mr. Henry](https://mrhenry.be), [Poonacha Medappa](https://poonachamedappa.com), [Roboflow](https://roboflow.com), [Square](https://github.com/square)
 
-## v6.1.4 2025 August 8
+## v6.1.4 2025 August 12
 
 - Disable potentially useful but broken `n/no-unsupported-features/es-syntax` rule, as it does not respect the `ecmaVersion` setting, and instead prefers to use the Node.js engine version, which is not what we want when using a transpiler, and is disrespectful as our configuration knows better, hence why there is even an `ecmaVersion` setting in the first place, they should rename this rule to `n/no-unsupported-features/node-syntax` as that it what it actually is
     - In a future version, we could use [editions](https://editions.bevry.me) to get the highest compatible Node.js version, and configure it for that, as a workaround for this silly behaviour
 - Thank you to the sponsors: [Andrew Nesbitt](https://nesbitt.io), [Divinci ™](https://divinci.ai), [Mr. Henry](https://mrhenry.be), [Poonacha Medappa](https://poonachamedappa.com), [Roboflow](https://roboflow.com), [Square](https://github.com/square)
 
-## v6.1.3 2025 August 8
+## v6.1.3 2025 August 12
 
 - ECMAScript version handling is now more robust, handling both target and source ecmascript versions
 - Our rule customisations are now extensions themselves injected at the appropriate time to better avoid conflicts and redundancies with other plugin rules

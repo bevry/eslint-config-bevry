@@ -14,24 +14,36 @@ import eslintJSDoc from 'eslint-plugin-jsdoc'
 import babelParser from '@babel/eslint-parser'
 import babelPlugin from '@babel/eslint-plugin'
 
-// @ts-ignore
+// Our dependencies
 import versionClean from 'version-clean'
+
+// Node.js dependencies
 import { join } from 'node:path'
 import { cwd } from 'node:process'
-import { readJSON } from '@bevry/json'
 
+// Local imports
+import * as rules from './rules.js'
+
+// Local paths
+import { readJSON } from '@bevry/json'
 import filedirname from 'filedirname'
 const [, dirname] = filedirname()
-const root = dirname.endsWith('source') ? join(dirname, '..') : dirname // on CI dirname is: /home/runner/work/eslint-config-bevry/eslint-config-bevry/source
-const pwd = cwd()
-
-import * as rules from './rules.js'
-const { IGNORE } = rules
+const bevryRootPath = join(dirname, '..')
+const userRootPath = cwd()
+const bevryPackagePath = join(bevryRootPath, 'package.json')
+const userPackagePath = join(userRootPath, 'package.json')
 
 // ------------------------------------
 // Prepare
 
+/**
+ * Error thrown when a dependency that should be inlined is found in the user's package.json
+ */
 class InlinedError extends Error {
+	/**
+	 * Creates an InlinedError instance
+	 * @param {string} dependency - The name of the dependency that is now inlined
+	 */
 	constructor(dependency) {
 		super(
 			`the development dependency ${dependency} is now inlined within eslint-config-bevry\nrun: npm uninstall --save-dev ${dependency}`,
@@ -39,18 +51,25 @@ class InlinedError extends Error {
 	}
 }
 
-const bevryPackage = await readJSON(join(root, 'package.json'))
-const pkg = {}
-try {
-	Object.assign(pkg, await readJSON(join(pwd, 'package.json')))
-} catch (err) {} // eslint-disable-line
+/**
+ * Reads a JSON file, returning an empty object if reading failed.
+ * @param {string} path - The path to the JSON file to read
+ * @param {object} [fallback] - The fallback value to return if reading fails
+ * @returns {Promise<object>} The parsed JSON object or the fallback value
+ */
+function readJSONFallback(path, fallback = {}) {
+	return readJSON(path).catch(() => fallback)
+}
+
+const bevryPackage = await readJSON(bevryPackagePath)
+const userPackage = await readJSONFallback(userPackagePath)
 
 // https://eslint.org/docs/latest/use/configure/configuration-files#configuration-objects
 /** @type {import('eslint').Linter.Config} */
 const config = {
 	name: bevryPackage.name,
 	// version: bevryPackage.version,
-	files: pkg.eslintConfig?.files || [],
+	files: userPackage.eslintConfig?.files || [],
 	// don't use ignores, as it doesn't help us with matched patterns from extended configurations, instead use globalIgnores
 	extends: [
 		globalIgnores([
@@ -58,7 +77,7 @@ const config = {
 			'**/vendor/',
 			'**/node_modules/',
 			'**/edition-*/',
-			...(pkg.eslintConfig?.ignores || []),
+			...(userPackage.eslintConfig?.ignores || []),
 		]),
 		rules.jsBefore,
 		eslintJS.configs.recommended,
@@ -107,7 +126,7 @@ function hasDep(name) {
  * @throws {InlinedError} if any of the specified dependencies are present
  */
 function inlinedDeps(...names) {
-	if (pkg.name === 'eslint-config-bevry') return
+	if (userPackage.name === 'eslint-config-bevry') return
 	for (const name of names) {
 		if (hasDep(name)) {
 			throw new InlinedError(name)
@@ -116,7 +135,11 @@ function inlinedDeps(...names) {
 }
 
 // Load the dependencies and versions
-Object.assign(deps, pkg.dependencies || {}, pkg.devDependencies || {})
+Object.assign(
+	deps,
+	userPackage.dependencies || {},
+	userPackage.devDependencies || {},
+)
 Object.keys(deps).forEach((name) => {
 	const range = deps[name]
 	const version = versionClean(range) || null // resolve to null in case of github references
@@ -124,7 +147,7 @@ Object.keys(deps).forEach((name) => {
 })
 
 // extract some common items
-const keywords = pkg.keywords || []
+const keywords = userPackage.keywords || []
 
 // ------------------------------------
 // Deprecations
@@ -188,9 +211,9 @@ let sourceType = 'script',
 	typescript = hasDep('typescript'),
 	babel = hasDep('@babel/core'),
 	jsx = false
-const prettier = Boolean(pkg.prettier) || hasDep('prettier'),
-	browser = Boolean(pkg.browser) || keywords.includes('browser'),
-	node = Boolean(pkg.engines?.node) || keywords.includes('node'),
+const prettier = Boolean(userPackage.prettier) || hasDep('prettier'),
+	browser = Boolean(userPackage.browser) || keywords.includes('browser'),
+	node = Boolean(userPackage.engines?.node) || keywords.includes('node'),
 	worker =
 		keywords.includes('worker') ||
 		keywords.includes('workers') ||
@@ -201,7 +224,8 @@ const prettier = Boolean(pkg.prettier) || hasDep('prettier'),
 
 /**
  * Ensure the ecmascript version is coerced to an eslint valid ecmascript version
- * @param version
+ * @param {string} [version] - The version string to coerce (e.g., 'esnext', 'latest', '2020')
+ * @returns {string|number} The coerced version as a string or number, or empty string if invalid
  */
 function coerceEcmascriptVersion(version = '') {
 	if (version === 'esnext' || version === 'latest' || version === 'next') {
@@ -221,14 +245,14 @@ function coerceEcmascriptVersion(version = '') {
 }
 
 // editions
-if (pkg.editions) {
-	const sourceEdition = pkg.editions[0]
+if (userPackage.editions) {
+	const sourceEdition = userPackage.editions[0]
 	const sourceEditionTags = sourceEdition.tags || sourceEdition.syntaxes || []
 	const ecmascriptVersionTag = coerceEcmascriptVersion(
 		sourceEditionTags.find((tag) => tag.startsWith('es')),
 	)
 	const ecmascriptVersionEngine = coerceEcmascriptVersion(
-		pkg.engines?.ecmascript,
+		userPackage.engines?.ecmascript,
 	)
 	ecmascriptVersionSource =
 		ecmascriptVersionTag || ecmascriptVersionEngine || ecmascriptNextVersion
@@ -323,12 +347,6 @@ if (node) {
 	// https://github.com/eslint-community/eslint-plugin-n#-configs
 	if (sourceType === 'module') {
 		config.extends.push(eslintNode.configs['flat/recommended-module'])
-		if (typescript) {
-			Object.assign(config.rules, {
-				// This result is broken for TypeScript projects, as in TypeScript you do `import thing from file.js` instead of `file.ts`, as it is about the resultant file, not the source file; TypeScript handles this correctly, however this rule does not
-				'n/no-unpublished-import': IGNORE,
-			})
-		}
 	} else {
 		config.extends.push(eslintNode.configs['flat/recommended-script'])
 	}
@@ -370,7 +388,7 @@ if (babel) {
 if (typescript) {
 	Object.assign(config.languageOptions.parserOptions, {
 		projectService: true,
-		tsconfigRootDir: root,
+		tsconfigRootDir: userRootPath,
 	})
 	config.extends.push(
 		// https://typescript-eslint.io/users/configs
@@ -422,10 +440,10 @@ if (ecmascriptVersionSource <= 5) {
 }
 
 // user rules overrides
-if (pkg.eslintConfig?.rules) {
-	Object.extends.push({
+if (userPackage.eslintConfig?.rules) {
+	config.extends.push({
 		name: 'eslint-config-bevry/package-json',
-		rules: pkg.eslintConfig.rules,
+		rules: userPackage.eslintConfig.rules,
 	})
 }
 

@@ -1,12 +1,17 @@
+/** ESLint rule severity level for ignoring/disabling a rule */
 export const IGNORE = 0
+/** ESLint rule severity level for warnings */
 export const WARN = 1
+/** ESLint rule severity level for errors */
 export const ERROR = 2
+/** Maximum number of parameters allowed in functions */
 export const MAX_PARAMS = 4
 
 // ============================================================================
 // Rules intended to be overwrote by ESLint Recommended
 // https://unpkg.com/@eslint/js@9/src/configs/eslint-recommended.js
 
+/** ESLint configuration for JavaScript rules that will be overridden by ESLint recommended */
 export const jsBefore = {
 	name: 'eslint-config-bevry/js/before',
 	rules: {
@@ -200,6 +205,7 @@ export const jsBefore = {
 // Rules intended to overwrite ESLint Recommended
 // https://unpkg.com/@eslint/js@9/src/configs/eslint-recommended.js
 
+/** ESLint configuration for JavaScript rules that override ESLint recommended */
 export const jsAfter = {
 	name: 'eslint-config-bevry/js/after',
 	rules: {
@@ -1070,7 +1076,7 @@ export const jsAfter = {
 // ============================================================================
 // Adjustments
 
-// These are adjustments based on the source ecmascript version, as the transpiler handles them
+/** ESLint configuration adjustments for ES5 compatibility - transpiler handles these features */
 export const es5 = {
 	name: 'eslint-config-bevry/es5',
 	rules: {
@@ -1082,6 +1088,7 @@ export const es5 = {
 	},
 }
 
+/** ESLint configuration for import plugin rules */
 export const importAfter = {
 	name: 'eslint-config-bevry/import/after',
 	rules: {
@@ -1095,6 +1102,7 @@ export const importAfter = {
 // https://github.com/eslint-community/eslint-plugin-n?tab=readme-ov-file#-rules
 // https://github.com/eslint-community/eslint-plugin-n/blob/master/lib/all-rules.js
 // None of these should be set by the recommended configs
+/** ESLint configuration for Node.js plugin rules */
 export const nodeAfter = {
 	name: 'eslint-config-bevry/node/after',
 	rules: {
@@ -1142,9 +1150,15 @@ export const nodeAfter = {
 		// https://github.com/eslint-community/eslint-plugin-n/blob/master/docs/rules/no-sync.md
 		// Sometimes sync methods are useful, so warn but don't error
 		'n/no-sync': WARN,
+
+		// https://github.com/eslint-community/eslint-plugin-n/blob/master/docs/rules/no-unpublished-import.md
+		// This result is broken for TypeScript projects, as in TypeScript you do `import thing from file.js` instead of `file.ts`, as it is about the resultant file, not the source file; TypeScript handles this correctly, however this rule does not
+		// However, it is also broken for this very project too, which is a JavaScript only project, so it is just broken in general...
+		'n/no-unpublished-import': IGNORE,
 	},
 }
 
+/** ESLint configuration for Node.js projects that use compilation/transpilation */
 export const nodeCompiled = {
 	name: 'eslint-config-bevry/node/compiled',
 	rules: {
@@ -1154,6 +1168,7 @@ export const nodeCompiled = {
 	},
 }
 
+/** ESLint configuration for TypeScript projects - rules that override default configs */
 export const typescriptAfter = {
 	name: 'eslint-config-bevry/typescript/after',
 	rules: {
@@ -1185,13 +1200,14 @@ export const typescriptAfter = {
 	},
 }
 
-// These are adjustments based on the target ecmascript version, as the transpiler does not handle them
+/** ESLint configuration for TypeScript projects targeting ES5 - transpiler limitations */
 export const typescriptEs5 = {
 	name: 'eslint-config-bevry/typescript/es5',
 	rules: {
 		'@typescript-eslint/prefer-for-of': IGNORE, // came in ES2015
 	},
 }
+/** ESLint configuration for TypeScript projects targeting ES2015 - transpiler limitations */
 export const typescriptEs2015 = {
 	name: 'eslint-config-bevry/typescript/es2015',
 	rules: {
@@ -1199,7 +1215,7 @@ export const typescriptEs2015 = {
 	},
 }
 
-// allow unsafe types in our test files, as how else are we meant to test that unsafe inputs will be handled correctly?
+/** ESLint configuration for TypeScript test files - allows unsafe types for testing */
 export const typescriptTests = {
 	name: 'eslint-config-bevry/typescript/tests',
 	files: ['**/test.{js,cjs,mjs,jsx,mjsx,ts,cts,mts,tsx,mtsx}'],
